@@ -1,0 +1,242 @@
+{
+    "series": {
+        "part_of_speech": "noun",
+        "length": 6,
+        "tone": 0,
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "science": {
+        "part_of_speech": "noun",
+        "length": 7,
+        "tone": 0,
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "patient": {
+        "part_of_speech": "noun",
+        "length": 7,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "analysis": {
+        "part_of_speech": "noun",
+        "length": 8,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "left": {
+        "part_of_speech": "adjective",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "spring": {
+        "part_of_speech": "noun",
+        "length": 6,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+	"level": {
+		"part_of_speech": "noun",
+		"length": 5,
+		"tone": "",
+		"is_palindrome": true,
+		"has_prefix": false,
+		"has_suffix": true
+	},
+    "born": {
+        "part_of_speech": "verb",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "close": {
+        "part_of_speech": "adjective/verb",
+        "length": 5,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "letter": {
+        "part_of_speech": "noun",
+        "length": 6,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "picture": {
+        "part_of_speech": "noun",
+        "length": 7,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "huge": {
+        "part_of_speech": "adjective",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "everyone": {
+        "part_of_speech": "pronoun",
+        "length": 8,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "five": {
+        "part_of_speech": "noun",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "scene": {
+        "part_of_speech": "noun",
+        "length": 5,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "according": {
+        "part_of_speech": "preposition",
+        "length": 9,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "much": {
+        "part_of_speech": "adverb",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "often": {
+        "part_of_speech": "adverb",
+        "length": 5,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "remove": {
+        "part_of_speech": "verb",
+        "length": 6,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "allow": {
+        "part_of_speech": "verb",
+        "length": 5,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "pop": {
+		"part_of_speech": "noun",
+		"length": 3,
+		"tone": "",
+		"is_palindrome": true,
+		"has_prefix": false,
+		"has_suffix": true
+	},
+    "service": {
+        "part_of_speech": "noun",
+        "length": 7,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "meeting": {
+        "part_of_speech": "noun",
+        "length": 7,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "soon": {
+        "part_of_speech": "adverb",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "both": {
+        "part_of_speech": "pronoun",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "idea": {
+        "part_of_speech": "noun",
+        "length": 4,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "arm": {
+        "part_of_speech": "noun",
+        "length": 3,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "power": {
+        "part_of_speech": "noun",
+        "length": 5,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "receive": {
+        "part_of_speech": "verb",
+        "length": 7,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    },
+    "benefit": {
+        "part_of_speech": "noun/verb",
+        "length": 7,
+        "tone": "",
+        "is_palindrome": false,
+        "has_prefix": false,
+        "has_suffix": true
+    }
+}

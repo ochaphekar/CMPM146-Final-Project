@@ -1,0 +1,548 @@
+{
+    "bulbasaur": {
+        "type1": "grass",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "charmander": {
+        "type1": "fire",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "squirtle": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "caterpie": {
+        "type1": "bug",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "weedle": {
+        "type1": "bug",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "pidgey": {
+        "type1": "normal",
+        "type2": "flying",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "rattata": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "spearow": {
+        "type1": "normal",
+        "type2": "flying",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "ekans": {
+        "type1": "poison",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "pikachu": {
+        "type1": "electric",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "sandshrew": {
+        "type1": "ground",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "nidoran": {
+        "type1": "poison",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "clefairy": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "vulpix": {
+        "type1": "fire",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "jigglypuff": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "zubat": {
+        "type1": "poison",
+        "type2": "flying",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "oddish": {
+        "type1": "grass",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "paras": {
+        "type1": "bug",
+        "type2": "grass",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "venonat": {
+        "type1": "bug",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "diglett": {
+        "type1": "ground",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "meowth": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "psyduck": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "mankey": {
+        "type1": "fight",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "growlithe": {
+        "type1": "fire",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "poliwag": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "abra": {
+        "type1": "psychic",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "machop": {
+        "type1": "fight",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "bellsprout": {
+        "type1": "grass",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "tentacool": {
+        "type1": "water",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "goedude": {
+        "type1": "rock",
+        "type2": "ground",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "ponyta": {
+        "type1": "fire",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "slowpoke": {
+        "type1": "water",
+        "type2": "psychic",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "magnemite": {
+        "type1": "electric",
+        "type2": "steel",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "farfetchd": {
+        "type1": "normal",
+        "type2": "flying",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "doduo": {
+        "type1": "normal",
+        "type2": "flying",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "seel": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "grimer": {
+        "type1": "poison",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "shellder": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "gastly": {
+        "type1": "ghost",
+        "type2": "poison",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "onix": {
+        "type1": "rock",
+        "type2": "ground",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "drowzee": {
+        "type1": "psychic",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "krabby": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "voltorb": {
+        "type1": "electric",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "exeggute": {
+        "type1": "grass",
+        "type2": "psychic",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "cubone": {
+        "type1": "ground",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "hitmonlee": {
+        "type1": "fight",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "hitmonchan": {
+        "type1": "fight",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "lickitung": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "koffing": {
+        "type1": "poison",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "rhyhorn": {
+        "type1": "ground",
+        "type2": "rock",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "chansey": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "tangela": {
+        "type1": "grass",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "kangaskhan": {
+        "type1": "normal",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "horsea": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "goldeen": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "staryu": {
+        "type1": "water",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": true
+    },
+    "mrmime": {
+        "type1": "psychic",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "scyther": {
+        "type1": "bug",
+        "type2": "flying",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "jynx": {
+        "type1": "ice",
+        "type2": "psychic",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "electabuzz": {
+        "type1": "electric",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "magmar": {
+        "type1": "fire",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "pinsir": {
+        "type1": "bug",
+        "type2": "none",
+        "height": ,
+        "weight": ,
+        "evolution?": false
+    },
+    "tauros": {
+        "type1": "normal",
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "magikarp": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "lapras": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "ditto": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "eevee": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "porygon": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "omanyte": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "kabuto": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "aerodactyl": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "snorlax": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "articuno": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "zapdos": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "moltres": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "dratini": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "mewtwo": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+    "mew": {
+        "type1": ,
+        "type2": ,
+        "height": ,
+        "weight": ,
+        "evolution?": 
+    },
+}
