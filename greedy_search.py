@@ -1,4 +1,5 @@
 import heapq
+import math
 
 weights = {
     'length': 0.8,
@@ -40,8 +41,13 @@ def transition_cost(current, next_node):
     return abs(current.length - next_node.length)
 
 def astar_search(initial_word, destination_word, word_graph):
-    start_node = WordNode(**word_graph[initial_word])
-    goal_node = WordNode(**word_graph[destination_word])
+    # make a new start_node by combining initial_word and word_graph[initial_word]
+
+    start_node = WordNode(initial_word, **word_graph[initial_word]) 
+    goal_node = WordNode(destination_word, **word_graph[destination_word])
+
+    print(start_node.word)
+    print(goal_node.word)
 
     open_set = [(0, start_node)]  # Priority queue with initial cost
     came_from = {}  # Dictionary to store the backpointer
@@ -51,7 +57,7 @@ def astar_search(initial_word, destination_word, word_graph):
     while open_set:
         _, current_node = heapq.heappop(open_set)
 
-        if current_node == goal_node:
+        if current_node.word == goal_node.word:
             # Reconstruct the path
             path = []
             while current_node in came_from:
@@ -61,12 +67,12 @@ def astar_search(initial_word, destination_word, word_graph):
             return path[::-1]
 
         for neighbor_word, neighbor_attributes in word_graph.items():
-            neighbor_node = WordNode(**neighbor_attributes)
+            neighbor_node = WordNode(neighbor_word, **neighbor_attributes)
             tentative_g_score = g_score[current_node] + transition_cost(current_node, neighbor_node)
 
             if neighbor_node not in g_score or tentative_g_score < g_score[neighbor_node]:
                 g_score[neighbor_node] = tentative_g_score
-                priority = tentative_g_score + heuristic(neighbor_node, goal_node)
+                priority = tentative_g_score + heuristic(neighbor_node, goal_node, weights)
                 heapq.heappush(open_set, (priority, neighbor_node))
                 came_from[neighbor_node] = current_node
 
