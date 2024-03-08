@@ -36,8 +36,8 @@ snli_data = load_jsonl(snli_jsonl_path)
 word_vectors = load_glove_vectors(glove_model_path)
 
 # Example sentences
-sentence1 = "The quick brown fox jumps over the lazy dog."
-sentence2 = "A fast brown fox leaps over the idle hound."
+sentence1 = "Jump"
+sentence2 = "Leap"
 
 # Tokenize and get word vectors for each sentence
 tokens1 = sentence1.lower().split()

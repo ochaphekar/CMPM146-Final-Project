@@ -1,53 +1,41 @@
 import heapq
 import math
+import json
 
 weights = {
     'length': 0.8,
-    'tone': 1.0,
     'is_palindrome': 2.0,
-    'has_prefix': 1.2,
-    'has_suffix': 1.2
 }
 
-
 class WordNode:
-    def __init__(self, word, part_of_speech, length, tone, is_palindrome, has_prefix, has_suffix):
+    def __init__(self, word, **kwargs):
         self.word = word
-        self.part_of_speech = part_of_speech
-        self.length = length
-        self.tone = float(tone)
-        self.is_palindrome = is_palindrome
-        self.has_prefix = has_prefix
-        self.has_suffix = has_suffix
+        for key, value in kwargs.items():
+            setattr(self, key, value)
 
     def __lt__(self, other):
         # Define the comparison method for heapq
         # You can adjust this based on the priority criteria for your search
-        return self.tone < other.tone
+        return len(self.word) < len(other.word)
 
 def heuristic(a, b, weights):
     # Euclidean distance based on attribute differences with weights
     diff_length = abs(a.length - b.length) * weights['length']
     diff_tone = abs(a.tone - b.tone) * weights['tone']
     diff_palindrome = (a.is_palindrome != b.is_palindrome) * weights['is_palindrome']
-    diff_prefix = (a.has_prefix != b.has_prefix) * weights['has_prefix']
-    diff_suffix = (a.has_suffix != b.has_suffix) * weights['has_suffix']
 
-    return math.sqrt(diff_length**2 + diff_tone**2 + diff_palindrome**2 + diff_prefix**2 + diff_suffix**2)
+    return math.sqrt(diff_length**2 + diff_tone**2 + diff_palindrome**2)
 
 def transition_cost(current, next_node):
     # You can customize this based on your specific requirements
     # Here, we use a simple cost based on the length difference
     return abs(current.length - next_node.length)
 
-def astar_search(initial_word, destination_word, word_graph):
+def astar_search(initial_word, destination_word, attributes):
     # make a new start_node by combining initial_word and word_graph[initial_word]
 
-    start_node = WordNode(initial_word, **word_graph[initial_word]) 
-    goal_node = WordNode(destination_word, **word_graph[destination_word])
-
-    print(start_node.word)
-    print(goal_node.word)
+    start_node = WordNode(initial_word, **attributes[initial_word]) 
+    goal_node = WordNode(destination_word, **attributes[destination_word])
 
     open_set = [(0, start_node)]  # Priority queue with initial cost
     came_from = {}  # Dictionary to store the backpointer
@@ -66,7 +54,7 @@ def astar_search(initial_word, destination_word, word_graph):
             path.append(start_node.word)
             return path[::-1]
 
-        for neighbor_word, neighbor_attributes in word_graph.items():
+        for neighbor_word, neighbor_attributes in attributes.items():
             neighbor_node = WordNode(neighbor_word, **neighbor_attributes)
             tentative_g_score = g_score[current_node] + transition_cost(current_node, neighbor_node)
 
@@ -78,12 +66,14 @@ def astar_search(initial_word, destination_word, word_graph):
 
     return None  # No path found
 
-# Example usage:
-word_graph = {
-    "start": {"part_of_speech": "noun", "length": 5, "tone": "0.2", "is_palindrome": False, "has_prefix": False, "has_suffix": True},
-    "middle": {"part_of_speech": "verb", "length": 6, "tone": "0.54", "is_palindrome": False, "has_prefix": False, "has_suffix": True},
-    "end": {"part_of_speech": "adjective", "length": 4, "tone": "0.8", "is_palindrome": True, "has_prefix": False, "has_suffix": True}
-}
+# currently loops between left, born, five, much, both, never reaching power
 
-path = astar_search("start", "end", word_graph)
+dictionary = None
+
+# load dictionary.json to use as word_graph
+with open('dictionary.json', 'r') as file:
+    dictionary = json.load(file)
+
+
+path = astar_search("left", "power", dictionary)
 print(path)

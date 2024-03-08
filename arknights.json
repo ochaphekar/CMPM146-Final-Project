@@ -1,0 +1,17 @@
+{
+    "Deepcolor": {
+        "rarity": 4,
+        "class": "Supporter",
+        "faction": "Aegir"  
+    },
+    "Skadi the Corrupting Heart": {
+        "rarity": 6,
+        "class": "Supporter",
+        "faction": "Aegir"
+    },
+    "Bagpipe": {
+        "rarity": 6,
+        "class": "Vanguard",
+        "faction": "Victoria"
+    }
+  }
