@@ -1,88 +1,116 @@
 {
   "series": {
     "part_of_speech": [
-      "noun",
-      "adjective"
+      "adjective",
+      "noun"
     ],
     "length": 6,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 18
   },
   "science": {
     "part_of_speech": [
       "noun",
-      "verb",
-      "noun"
+      "verb"
     ],
     "length": 7,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 18
   },
   "patient": {
     "part_of_speech": [
-      "noun",
-      "adjective"
+      "adjective",
+      "noun"
     ],
     "length": 7,
-    "tone": 0.125,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 1,
+    "contains_e": 1,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 15
   },
   "analysis": {
     "part_of_speech": [
       "noun"
     ],
     "length": 8,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 2,
+    "contains_e": 0,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 0
   },
   "left": {
     "part_of_speech": [
-      "noun",
+      "adverb",
       "adjective",
-      "adverb"
+      "noun"
     ],
     "length": 4,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 11
   },
   "spring": {
     "part_of_speech": [
-      "verb",
       "noun",
-      "verb",
-      "verb",
       "verb"
     ],
     "length": 6,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 0,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 18
   },
   "level": {
     "part_of_speech": [
+      "adjective",
       "noun",
-      "verb",
-      "adjective"
+      "verb"
     ],
     "length": 5,
-    "tone": -0.25,
     "is_palindrome": true,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 11
   },
   "born": {
     "part_of_speech": [
-      "verb",
-      "adjective"
+      "adjective",
+      "verb"
     ],
     "length": 4,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 1
   },
   "close": {
     "part_of_speech": [
@@ -90,20 +118,27 @@
       "verb"
     ],
     "length": 5,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 2
   },
   "letter": {
     "part_of_speech": [
       "noun",
-      "verb",
-      "noun"
+      "verb"
     ],
     "length": 6,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 11
   },
   "picture": {
     "part_of_speech": [
@@ -111,37 +146,53 @@
       "verb"
     ],
     "length": 7,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 1,
+    "index": 15
   },
   "huge": {
     "part_of_speech": [
       "adjective"
     ],
     "length": 4,
-    "tone": -0.125,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 1,
+    "index": 7
   },
   "everyone": {
     "part_of_speech": [
       "pronoun"
     ],
     "length": 8,
-    "tone": null,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 3,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 4
   },
   "five": {
     "part_of_speech": [
-      "noun",
-      "numeral"
+      "numeral",
+      "noun"
     ],
     "length": 4,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 5
   },
   "scene": {
     "part_of_speech": [
@@ -149,41 +200,57 @@
       "verb"
     ],
     "length": 5,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 18
   },
   "according": {
     "part_of_speech": [
-      "verb",
+      "adverb",
       "adjective",
-      "adverb"
+      "verb"
     ],
     "length": 9,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 1,
+    "contains_e": 0,
+    "contains_i": 1,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 0
   },
   "much": {
     "part_of_speech": [
-      "adjective",
+      "pronoun",
       "adverb",
-      "pronoun"
+      "adjective"
     ],
     "length": 4,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 1,
+    "index": 12
   },
   "often": {
     "part_of_speech": [
-      "adjective",
-      "adverb"
+      "adverb",
+      "adjective"
     ],
     "length": 5,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 14
   },
   "remove": {
     "part_of_speech": [
@@ -191,29 +258,41 @@
       "verb"
     ],
     "length": 6,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 17
   },
   "allow": {
     "part_of_speech": [
       "verb"
     ],
     "length": 5,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 1,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 0
   },
   "pop": {
     "part_of_speech": [
+      "interjection",
       "noun",
-      "verb",
-      "interjection"
+      "verb"
     ],
     "length": 3,
-    "tone": 0.0,
     "is_palindrome": true,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 15
   },
   "service": {
     "part_of_speech": [
@@ -221,28 +300,40 @@
       "verb"
     ],
     "length": 7,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 18
   },
   "meeting": {
     "part_of_speech": [
       "noun"
     ],
     "length": 7,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 12
   },
   "soon": {
     "part_of_speech": [
-      "adjective",
-      "adverb"
+      "adverb",
+      "adjective"
     ],
     "length": 4,
-    "tone": -0.125,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 2,
+    "contains_u": 0,
+    "index": 18
   },
   "both": {
     "part_of_speech": [
@@ -250,18 +341,26 @@
       "conjunction"
     ],
     "length": 4,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 1
   },
   "idea": {
     "part_of_speech": [
       "noun"
     ],
     "length": 4,
-    "tone": 0.125,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 1,
+    "contains_e": 1,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 8
   },
   "arm": {
     "part_of_speech": [
@@ -269,20 +368,28 @@
       "verb"
     ],
     "length": 3,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 1,
+    "contains_e": 0,
+    "contains_i": 0,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 0
   },
   "power": {
     "part_of_speech": [
+      "adjective",
       "noun",
-      "verb",
-      "adjective"
+      "verb"
     ],
     "length": 5,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 1,
+    "contains_i": 0,
+    "contains_o": 1,
+    "contains_u": 0,
+    "index": 15
   },
   "receive": {
     "part_of_speech": [
@@ -290,9 +397,13 @@
       "verb"
     ],
     "length": 7,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 3,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 17
   },
   "benefit": {
     "part_of_speech": [
@@ -300,8 +411,12 @@
       "verb"
     ],
     "length": 7,
-    "tone": 0.0,
     "is_palindrome": false,
-    "contains_vowel": true
+    "contains_a": 0,
+    "contains_e": 2,
+    "contains_i": 1,
+    "contains_o": 0,
+    "contains_u": 0,
+    "index": 1
   }
 }
