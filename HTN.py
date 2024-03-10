@@ -75,13 +75,16 @@ def eliminate(words, attr, goal, guess, time):
 
 # main function, read json file into list of words/items. Then plays the game
 if __name__ == '__main__':
+    # open and collect dict from json file
     words_filename = 'pokemon.json'
-
     with open(words_filename) as f:
         data = json.load(f)
     
+    # words is word bank in list form, attr is list of their respective attributes
+    # words and attr share the same index
     words, attr = create_dicts(data)
 
+    # choose goal word by randomly selecting word/item from word bank
     goalword = random.choice(words)
     print("Goal is", goalword)
     time = 0
