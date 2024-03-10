@@ -518,7 +518,7 @@
         "evolution?": false
     },
     "moltres": {
-        "type1": "fight",
+        "type1": "fire",
         "type2": "flying",
         "height": 2.0,
         "weight": 60.0,
