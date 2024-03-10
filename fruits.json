@@ -1,0 +1,199 @@
+{
+    "apple": {
+      "taste": "sweet",
+      "color": "red",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "fiber", "potassium"]
+    },
+    "banana": {
+      "taste": "sweet",
+      "color": "yellow",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin B6", "vitamin C", "fiber", "potassium"]
+    },
+    "orange": {
+      "taste": "citrusy",
+      "color": "orange",
+      "is_citrus": true,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "fiber", "folate", "potassium"]
+    },
+    "kiwi": {
+      "taste": "tangy",
+      "color": "brown",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "fiber"]
+    },
+    "strawberry": {
+      "taste": "sweet",
+      "color": "red",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "manganese", "fiber"]
+    },
+    "pineapple": {
+      "taste": "tangy",
+      "color": "yellow",
+      "is_citrus": false,
+      "is_seedless": true,
+      "nutrients": ["vitamin C", "manganese", "fiber"]
+    },
+    "grape": {
+      "taste": "sweet",
+      "color": "purple",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "resveratrol"]
+    },
+    "watermelon": {
+      "taste": "sweet",
+      "color": "green",
+      "is_citrus": false,
+      "is_seedless": true,
+      "nutrients": ["vitamin C", "vitamin A", "potassium"]
+    },
+    "pear": {
+      "taste": "sweet",
+      "color": "green",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "fiber", "potassium"]
+    },
+    "mango": {
+      "taste": "sweet",
+      "color": "yellow",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin A", "fiber"]
+    },
+    "peach": {
+      "taste": "sweet",
+      "color": "orange",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin A", "fiber"]
+    },
+    "blueberry": {
+      "taste": "sweet",
+      "color": "blue",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "fiber"]
+    },
+    "raspberry": {
+      "taste": "tart",
+      "color": "red",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "manganese", "fiber"]
+    },
+    "coconut": {
+      "taste": "sweet",
+      "color": "brown",
+      "is_citrus": false,
+      "is_seedless": true,
+      "nutrients": ["fiber", "manganese", "potassium"]
+    },
+    "apricot": {
+      "taste": "sweet",
+      "color": "orange",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin A", "vitamin C", "fiber"]
+    },
+    "cherry": {
+      "taste": "sweet",
+      "color": "red",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "fiber"]
+    },
+    "fig": {
+      "taste": "sweet",
+      "color": "purple",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin K", "potassium", "calcium"]
+    },
+    "guava": {
+      "taste": "sweet",
+      "color": "green",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "fiber", "folate"]
+    },
+    "plum": {
+      "taste": "sweet",
+      "color": "purple",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "fiber"]
+    },
+    "pomegranate": {
+      "taste": "tart",
+      "color": "red",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "fiber"]
+    },
+    "kiwifruit": {
+      "taste": "tangy",
+      "color": "green",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin K", "fiber"]
+    },
+    "passion fruit": {
+      "taste": "tangy",
+      "color": "purple",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin A", "fiber"]
+    },
+    "dragon fruit": {
+      "taste": "mild",
+      "color": "pink",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "fiber", "antioxidants"]
+    },
+    "jackfruit": {
+      "taste": "sweet",
+      "color": "yellow",
+      "is_citrus": false,
+      "is_seedless": true,
+      "nutrients": ["vitamin C", "vitamin B6", "fiber"]
+    },
+    "lychee": {
+      "taste": "sweet",
+      "color": "red",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "potassium", "copper"]
+    },
+    "persimmon": {
+      "taste": "sweet",
+      "color": "orange",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin A", "vitamin C", "fiber"]
+    },
+    "kiwano": {
+      "taste": "tangy",
+      "color": "orange",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin C", "vitamin A", "fiber"]
+    },
+    "avocado": {
+      "taste": "buttery",
+      "color": "green",
+      "is_citrus": false,
+      "is_seedless": false,
+      "nutrients": ["vitamin K", "vitamin E", "fiber"]
+    }
+  }
+  
