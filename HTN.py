@@ -32,7 +32,7 @@ def eliminate(words, attr, goal, guess, time):
     # compare guess word with goal word and make list of whether each attribute is correct or not
     for x in goal_attr:
         # if attribute is number, see if goal attribute is bigger or smaller
-        if isinstance(goal_attr[x], float):
+        if isinstance(goal_attr[x], float) or isinstance(goal_attr[x], int):
             if goal_attr[x] > guess_attr[x]:
                 compared.append(">")
             elif goal_attr[x] < guess_attr[x]:
