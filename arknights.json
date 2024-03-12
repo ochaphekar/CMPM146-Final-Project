@@ -1,0 +1,721 @@
+{
+    "Specter": {
+        "class": "Guard",
+        "branch": "Centurion",
+        "position": "Melee",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "Survival",
+            "AoE"
+        ],
+        "rarity": 5,
+        "race": "Aegir"
+    },
+    "Blue Poison": {
+        "class": "Sniper",
+        "branch": "Marksman",
+        "position": "Ranged",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 5,
+        "race": "Anura"
+    },
+    "Saria": {
+        "class": "Defender",
+        "branch": "Guardian",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Support",
+            "Healing",
+            "Defense"
+        ],
+        "rarity": 6,
+        "race": "Vouivre"
+    },
+    "SilverAsh": {
+        "class": "Guard",
+        "branch": "Lord",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Support"
+        ],
+        "rarity": 6,
+        "race": "Feline"
+    },
+    "Exusiai": {
+        "class": "Sniper",
+        "branch": "Marksman",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Sankta"
+    },
+    "Ifrit": {
+        "class": "Caster",
+        "branch": "Blast",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "AoE",
+            "Debuff"
+        ],
+        "rarity": 6,
+        "race": "Sarkaz"
+    },
+    "Siege": {
+        "class": "Vanguard",
+        "branch": "Pioneer",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "DP-Recovery"
+        ],
+        "rarity": 6,
+        "race": "Aslan"
+    },
+    "Shining": {
+        "class": "Medic",
+        "branch": "Medic",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Healing",
+            "Support"
+        ],
+        "rarity": 6,
+        "race": "Sarkaz"
+    },
+    "Phantom": {
+        "class": "Specialist",
+        "branch": "Executor",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Fast-Redeploy",
+            "Crowd-Control",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Feline"
+    },
+    "Blaze": {
+        "class": "Guard",
+        "branch": "Vanguard",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Survival"
+        ],
+        "rarity": 6,
+        "race": "Feline"
+    },
+    "Mostima": {
+        "class": "Caster",
+        "branch": "Splash",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "AoE",
+            "Support",
+            "Crowd-Control"
+        ],
+        "rarity": 6,
+        "race": "Sankta"
+    },
+    "Bagpipe": {
+        "class": "Vanguard",
+        "branch": "Charger",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "DP-Recovery"
+        ],
+        "rarity": 6,
+        "race": "Vouivre"
+    },
+    "Mudrock": {
+        "class": "Defender",
+        "branch": "Juggernaut",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Survival",
+            "Defense",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Sarkaz"
+    },
+    "Hellagur": {
+        "class": "Guard",
+        "branch": "Soloblade",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Survival"
+        ],
+        "rarity": 6,
+        "race": "Liberi"
+    },
+    "Suzuran": {
+        "class": "Supporter",
+        "branch": "Decel Binder",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Slow",
+            "Support",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Vulpo"
+    },
+    "Thorns": {
+        "class": "Guard",
+        "branch": "Lord",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Defense"
+        ],
+        "rarity": 6,
+        "race": "Aegir"
+    },
+    "Surtr": {
+        "class": "Guard",
+        "branch": "Arts Fighter",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Sarkaz"
+    },
+    "Rosmontis": {
+        "class": "Sniper",
+        "branch": "Flinger",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Feline"
+    },
+    "Aak": {
+        "class": "Specialist",
+        "branch": "Geek",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Support"
+        ],
+        "rarity": 6,
+        "race": "Feline"
+    },
+    "Weedy": {
+        "class": "Specialist",
+        "branch": "Push Stroker",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Shift",
+            "Crowd-Control",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Aegir"
+    },
+    "Eunectes": {
+        "class": "Defender",
+        "branch": "Duelist",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Survival",
+            "Defense",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Pythia"
+    },
+    "Blemishine": {
+        "class": "Defender",
+        "branch": "Guardian",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Defense",
+            "Healing",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Kuranta"
+    },
+    "Nian": {
+        "class": "Defender",
+        "branch": "Protector",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Support",
+            "Defense"
+        ],
+        "rarity": 6,
+        "race": "Feranmut"
+    },
+    "Mayer": {
+        "class": "Specialist",
+        "branch": "Summoner",
+        "position": "Ranged",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "Summon",
+            "Crowd-Control"
+        ],
+        "rarity": 5,
+        "race": "Anaty"
+    },
+    "Magallan": {
+        "class": "Specialist",
+        "branch": "Summoner",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Support",
+            "Slow",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Liberi"
+    },
+    "Eyjafjalla": {
+        "class": "Caster",
+        "branch": "Core",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Debuff",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Caprinae"
+    },
+    "Rosa": {
+        "class": "Sniper",
+        "branch": "Besieger",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Crowd-Control"
+        ],
+        "rarity": 6,
+        "race": "Ursus"
+    },
+    "Ch'en": {
+        "class": "Guard",
+        "branch": "Dualstrike",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Nuker"
+        ],
+        "rarity": 6,
+        "race": "Lung"
+    },
+    "Hoshiguma": {
+        "class": "Defender",
+        "branch": "Protector",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Defense",
+            "DPS"
+        ],
+        "rarity": 6,
+        "race": "Oni"
+    },
+    "Skadi": {
+        "class": "Guard",
+        "branch": "Dreadnought",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Survival"
+        ],
+        "rarity": 6,
+        "race": "Aegir"
+    },
+    "Ceobe": {
+        "class": "Caster",
+        "branch": "Core",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Crowd-Control"
+        ],
+        "rarity": 6,
+        "race": "Perro"
+    },
+    "Saga": {
+        "class": "Vanguard",
+        "branch": "Pioneer",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "DP-Recovery"
+        ],
+        "rarity": 6,
+        "race": "Perro"
+    },
+    "Dusk": {
+        "class": "Caster",
+        "branch": "Splash",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "AoE",
+            "Crowd-Control"
+        ],
+        "rarity": 6,
+        "race": "Feranmut"
+    },
+    "Tequila": {
+        "class": "Guard",
+        "branch": "Liberator",
+        "position": "Melee",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "Nuker"
+        ],
+        "rarity": 5,
+        "race": "Perro"
+    },
+    "La Pluma": {
+        "class": "Guard",
+        "branch": "Reaper",
+        "position": "Melee",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 5,
+        "race": "Liberi"
+    },
+    "Highmore": {
+        "class": "Guard",
+        "branch": "Reaper",
+        "position": "Melee",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 5,
+        "race": "Aegir"
+    },
+    "Humus": {
+        "class": "Guard",
+        "branch": "Reaper",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "DPS", 
+            "Survival"
+        ],
+        "rarity": 4,
+        "race": "Forte"
+    },
+    "Pallas": {
+        "class": "Guard",
+        "branch": "Instructor",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Support"
+        ],
+        "rarity": 6,
+        "race": "Forte"
+    },
+    "Dobermann": {
+        "class": "Guard",
+        "branch": "Instructor",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "DPS",
+            "Support"
+        ],
+        "rarity": 4,
+        "race": "Perro"
+    },
+    "Spot": {
+        "class": "Defender",
+        "branch": "Guardian",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "Defense",
+            "Healing"
+        ],
+        "rarity": 3,
+        "race": "Perro"
+    }, 
+    "Ansel": {
+        "class": "Medic",
+        "branch": "Medic",
+        "position": "Ranged",
+        "qualification": "None",
+        "affixes": [
+            "Healing"
+        ],
+        "rarity": 3,
+        "race": "Cautus"
+    },
+    "Amiya": {
+        "class": "Caster",
+        "branch": "Core",
+        "position": "Ranged",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 5,
+        "race": "Cautus"
+    },
+    "Popukar": {
+        "class": "Guard",
+        "branch": "Centurion",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "AoE",
+            "Survival"
+        ],
+        "rarity": 3,
+        "race": "Cautus"
+    },
+    "Yato": {
+        "class": "Vanguard",
+        "branch": "Pioneer",
+        "position": "Melee",
+        "qualification": "Starter",
+        "affixes": [
+            "None"
+        ],
+        "rarity": 2,
+        "race": "Oni"
+    },
+    "Noir Corne": {
+        "class": "Defender",
+        "branch": "Protector",
+        "position": "Melee",
+        "qualification": "Starter",
+        "affixes": [
+            "None"
+        ],
+        "rarity": 2,
+        "race": "Oni"
+    },
+    "Rangers": {
+        "class": "Sniper",
+        "branch": "Marksman",
+        "position": "Ranged",
+        "qualification": "Starter",
+        "affixes": [
+            "None"
+        ],
+        "rarity": 2,
+        "race": "Savra"
+    },
+    "Lancet-2": {
+        "class": "Medic",
+        "branch": "Medic",
+        "position": "Ranged",
+        "qualification": "None",
+        "affixes": [
+            "Robot"
+        ],
+        "rarity": 1,
+        "race": "Robot"
+    },
+    "Castle-3": {
+        "class": "Guard",
+        "branch": "Dreadnought",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "Robot",
+            "Support"
+        ],
+        "rarity": 1,
+        "race": "Robot"
+    },
+    "THRM-EX": {
+        "class": "Specialist",
+        "branch": "Executor",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "Robot",
+            "Nuker"
+        ],
+        "rarity": 1,
+        "race": "Robot"
+    },
+    "12F": {
+        "class": "Caster",
+        "branch": "Splash",
+        "position": "Ranged",
+        "qualification": "Starter",
+        "affixes": [
+            "None"
+        ],
+        "rarity": 2,
+        "race": "Savra"
+    },
+    "Blacknight": {
+        "class": "Vanguard",
+        "branch": "Tactician",
+        "position": "Ranged",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "Crowd-Control",
+            "DP-Recovery"
+        ],
+        "rarity": 5,
+        "race": "Savra"
+    },
+    "Durin": {
+        "class": "Caster",
+        "branch": "Core",
+        "position": "Ranged",
+        "qualification": "Starter",
+        "affixes": [
+            "None"
+        ],
+        "rarity": 2,
+        "race": "Durin"
+    },
+    "Myrtle": {
+        "class": "Vanguard",
+        "branch": "Standard Bearer",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "DP-Recovery",
+            "Healing"
+        ],
+        "rarity": 4,
+        "race": "Durin"
+    },
+    "Mlynar": {
+        "class": "Guard",
+        "branch": "Liberator",
+        "position": "Melee",
+        "qualification": "Top Operator",
+        "affixes": [
+            "DPS",
+            "Nuker"
+        ],
+        "rarity": 6,
+        "race": "Kuranta"
+    },
+    "Elysium": {
+        "class": "Vanguard",
+        "branch": "Standard Bearer",
+        "position": "Melee",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "DP-Recovery",
+            "Support"
+        ],
+        "rarity": 5,
+        "race": "Liberi"
+    },
+    "FEater": {
+        "class": "Specialist",
+        "branch": "Push Stroker",
+        "position": "Melee",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "Shift",
+            "Slow"
+        ],
+        "rarity": 5,
+        "race": "Ursus"
+    },
+    "Mousse": {
+        "class": "Guard",
+        "branch": "Arts Fighter",
+        "position": "Melee",
+        "qualification": "None",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 4,
+        "race": "Feline"
+    },
+    "Lumen": {
+        "class": "Medic",
+        "branch": "Therapist",
+        "position": "Ranged",
+        "qualification": "Top Operator",
+        "affixes": [
+            "Healing",
+            "Support"
+        ],
+        "rarity": 6,
+        "race": "Aegir"
+    },
+    "Ceylon": {
+        "class": "Medic",
+        "branch": "Therapist",
+        "position": "Ranged",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "Healing"
+        ],
+        "rarity": 5,
+        "race": "Liberi"
+    },
+    "Toddifons": {
+        "class": "Sniper",
+        "branch": "Besieger",
+        "position": "Ranged",
+        "qualification": "Senior Operator",
+        "affixes": [
+            "DPS"
+        ],
+        "rarity": 5,
+        "race": "Vouivre"
+    }
+
+
+
+    
+
+    
+    
+}

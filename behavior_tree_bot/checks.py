@@ -1,4 +1,5 @@
 
+
 import numpy as np
 
 """
@@ -60,6 +61,7 @@ Function filter_words_by_part_of_speech(words, target_parts_of_speech):
     
     Return filtered_words
     """
+<<<<<<< HEAD
 
 #conditional check 4
 # contains one or more of the same parts of speech as the actual word. 
@@ -67,6 +69,10 @@ Function filter_words_by_part_of_speech(words, target_parts_of_speech):
 # conditional check 5
 # Check for vowel count of guess vs. actual word
 
+=======
+# conditional check 4
+# Check for vowel count: create a new filtered list of words that only match the vowel count of the actual word.
+>>>>>>> 36f7d998258e5a84713fbd04562f065dc8d5f63d
 """""
 #Function filter_words_by_vowel_count(words, target_vowel_count):
     filtered_words = empty list
