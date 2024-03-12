@@ -1,6 +1,43 @@
 import sys
 sys.path.insert(0, '../')
 
+#dictionary behaviors
+
+#greedy behavior - looks for basically getting really lucky w/ the palindrome or index to massively cut search space early
+"""
+def greedy_behavior():
+
+- first check for same index and create a list of words with same index
+Function filter_words_by_index(words, target_index):
+    filtered_words = empty list
+    
+    For each word in words:
+        If index of word equals target_index:
+            Add word to filtered_words
+    
+    Return filtered_words
+
+- from new list, check if actual word is palindrome. if true, then filter out words that aren't palindromes.
+Function filter_palindromes(words):
+    filtered_words = empty list
+    
+    For each word in words:
+        If word is a palindrome:
+            Add word to filtered_words
+    
+    Return filtered_words
+"""
+
+
+#information behavior - looks more for parts of speech, vowel count, and length to cut search space consistently
+"""
+def information_behavior():
+
+
+"""
+
+
+#below is the code from p3?
 
 """
 Here is where you will implement your functions for action nodes, typically issuing orders. 
