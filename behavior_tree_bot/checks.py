@@ -8,13 +8,17 @@ actions, each function should only take the target word and json file.
 """
 
 # conditional check 1
-# Check: CHeck the index of the guess and the actual word and rarrow down the list of potential guesses to a new list of words that only contains words of that given index. 
+# Check: Check the index of the guess and the actual word and rarrow down the list of potential guesses to a new list of words that only contains words of that given index. 
 """
-Function filter_words_by_index(words, target_index):
+Function filter_words_by_index(words, guessed_index, guess_accuracy):
     filtered_words = empty list
     
     For each word in words:
-        If index of word equals target_index:
+        if guess_accuracy == -1 and if index of word less than equal to guessed_index:
+            Add all words with lower index than guess to filtered words 
+        elif guess_accuracy == 1 and if index of word greater than equal to guessed_index:
+            Add all words with higher index than guess to filtered words.
+        elif guess_accuracy == 0 and if index of word equals guessed_index:
             Add word to filtered_words
     
     Return filtered_words
@@ -38,10 +42,10 @@ Function filter_palindromes(words):
 
 # conditional check 3
 # Check: The number of parts of speech the guess has compared to the actual word
-- Narrow down the list of words to a list of words form the JSON that only contains the same number of parts of speech as the actual word. 
+## Narrow down the list of words to a list of words form the JSON that only contains the same number of parts of speech as the actual word. 
 
 """
-Function filter_words_by_part_of_speech(words, target_parts_of_speech):
+Function filter_words_by_part_of_speech(words, target_parts_of_speech): #ask about this what info do we get
     filtered_words = empty list
     
     actual_word_parts_of_speech_count = count_parts_of_speech(actual_word)
@@ -61,7 +65,6 @@ Function filter_words_by_part_of_speech(words, target_parts_of_speech):
     
     Return filtered_words
     """
-<<<<<<< HEAD
 
 #conditional check 4
 # contains one or more of the same parts of speech as the actual word. 
@@ -69,21 +72,18 @@ Function filter_words_by_part_of_speech(words, target_parts_of_speech):
 # conditional check 5
 # Check for vowel count of guess vs. actual word
 
-=======
 # conditional check 4
 # Check for vowel count: create a new filtered list of words that only match the vowel count of the actual word.
->>>>>>> 36f7d998258e5a84713fbd04562f065dc8d5f63d
 """""
-#Function filter_words_by_vowel_count(words, target_vowel_count):
+Function filter_words_by_vowel_count(words, guessed_vowel_count, guess_accuracy):
     filtered_words = empty list
     
     For each word in words:
-        vowel_count = 0
-        For each letter in word:
-            If letter is a vowel:
-                Increment vowel_count
-        
-        If vowel_count equals target_vowel_count:
+        if guess_accuracy == -1 and if vowel count of word less than equal to guessed_vowel_count:
+            Add all words with lower vowel count than guess to filtered words
+        elif guess_accuracy == 1 and if vowel count of word greater than equal to guessed_vowel_count:
+            Add all words with higher vowel count than guess to filtered words.
+        elif guess_accuracy == 0 and if vowel count of word equals guessed_vowel_count:
             Add word to filtered_words
     
     Return filtered_words
@@ -91,12 +91,15 @@ Function filter_words_by_part_of_speech(words, target_parts_of_speech):
 # conditional check 5
 #Check for length count: FILTER out words that don't have the same length count. 
 """
-Function filter_words_by_length(words, target_length):
+Function filter_words_by_length(words, guessed_length, guess_accuracy):
     filtered_words = empty list
     
     For each word in words:
-        If length of word equals target_length:
+        if guess_accuracy == -1 and if length of word less than equal to guessed_length:
+            Add all words with lower length than guess to filtered words
+        elif guess_accuracy == 1 and if length of word greater than equal to guessed_length:
+            Add all words with higher length than guess to filtered words.
+        elif guess_accuracy == 0 and if length of word equals guessed_length:
             Add word to filtered_words
-    
     Return filtered_words
 """
