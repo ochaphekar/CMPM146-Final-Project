@@ -68,6 +68,7 @@ def rng_guess(words):
 
 def eliminate(words, attr, goal, guess, time):
     # if guess word is same as goal word, found it
+    print("Guessing", guess)
     if goal == guess:
         return guess, time
     # otherwise start eliminating
@@ -100,12 +101,14 @@ def eliminate(words, attr, goal, guess, time):
                 # if goal > guess, remove any words/items that are smaller or same
                 if compared[i] == ">":
                     if list(x.values())[i] <= list(guess_attr.values())[i]:
+                        print(words[attr.index(x)], "eliminated")
                         new_words.remove(words[attr.index(x)])
                         new_attr.remove(x)
                         break
                 # if goal < guess, remove any words/items that are bigger or same
                 else:
                     if list(x.values())[i] >= list(guess_attr.values())[i]:
+                        print(words[attr.index(x)], "eliminated")
                         new_words.remove(words[attr.index(x)])
                         new_attr.remove(x)
                         break
@@ -113,10 +116,13 @@ def eliminate(words, attr, goal, guess, time):
             else:
                 if compared[i] == True:
                     if list(x.values())[i] != list(guess_attr.values())[i]:
+                        print(words[attr.index(x)], "eliminated")
                         new_words.remove(words[attr.index(x)])
                         new_attr.remove(x)
                         break
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
+    if len(new_words) != len(words):
+        print("Words Left: ", new_words)
     return eliminate(new_words, new_attr, goal, rng_guess(new_words), time)
 
 # main function, read json file into list of words/items. Then plays the game
@@ -139,8 +145,30 @@ def htn(json, word):
 
     # choose goal word by randomly selecting word/item from word bank
     goalword = word
-    time = 0
+    time = 1
 
+    # guess = half_eliminate(words, attr) [EXAMPLE]
+    guess = rng_guess(words)
+    final, time = eliminate(words, attr, goalword, guess, time)
+    print("Final Guess is:", final)
+    print("Number of Guesses:", time)
+
+
+if __name__ == '__main__':
+    # open and collect dict from json file
+    words_filename = 'arknights.json'
+
+    with open(words_filename) as f:
+        data = json.load(f)
+    
+    # words is word bank in list form, attr is list of their respective attributes
+    # words and attr share the same index
+    words, attr = create_dicts(data)
+
+    # choose goal word by randomly selecting word/item from word bank
+    goalword = random.choice(words)
+    print("Goal is", goalword)
+    time = 1
     # guess = half_eliminate(words, attr) [EXAMPLE]
     guess = rng_guess(words)
     final, time = eliminate(words, attr, goalword, guess, time)
