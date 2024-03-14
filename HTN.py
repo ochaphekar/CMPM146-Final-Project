@@ -128,8 +128,9 @@ def eliminate(words, attr, goal, guess, time):
 def human_evaluate(og_words, words, og_attr, attr, goal, time):
     # if guess word is same as goal word, found it
     if time > 1:
-        print("Guess a new word:")
-    guess = str(input())
+        guess = str(input("Guess a new word:"))
+    else:
+        guess = str(input())
     if guess not in og_words:
         print("Please try again, remember to use capitals and punctuation if needed...")
         human_evaluate(words, attr, goal, time)
