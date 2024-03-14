@@ -125,6 +125,81 @@ def eliminate(words, attr, goal, guess, time):
         print("Words Left: ", new_words)
     return eliminate(new_words, new_attr, goal, rng_guess(new_words), time)
 
+def human_evaluate(og_words, words, og_attr, attr, goal, time):
+    # if guess word is same as goal word, found it
+    if time > 1:
+        print("Guess a new word:")
+    guess = str(input())
+    if guess not in og_words:
+        print("Please try again, remember to use capitals and punctuation if needed...")
+        human_evaluate(words, attr, goal, time)
+    if goal == guess:
+        return guess, time
+    # otherwise start eliminating
+    time += 1
+    guess_attr = og_attr[og_words.index(guess)]
+    goal_attr = og_attr[og_words.index(goal)]
+    compared = []
+    # compare guess word with goal word and make list of whether each attribute is correct or not
+    for x in goal_attr:
+        # if attribute is number, see if goal attribute is bigger or smaller
+        if isinstance(goal_attr[x], float) or isinstance(goal_attr[x], int):
+            if goal_attr[x] > guess_attr[x]:
+                compared.append(">")
+            elif goal_attr[x] < guess_attr[x]:
+                compared.append("<")
+            else:
+                compared.append(True)
+        # else check if attributes are the same or not
+        else:
+            if goal_attr[x] == guess_attr[x]:
+                compared.append(True)
+            else:
+                compared.append(False)
+    #print(guess, compared)
+    result = dict()
+    for i in range(len(compared)):
+        if isinstance(compared[i], bool):
+            if compared[i] == True:
+                result[list(attr[0].values())[i]] = "Correct"
+            elif compared[i] == False:
+                result[list(attr[0].values())[i]] = "Incorrect"
+        else:
+            result[list(attr[0].values())[i]] = compared[i]
+    print(result)
+    new_words = words.copy()
+    new_attr = attr.copy()
+    # run through all words/items in list and remove any that don't match the new criteria
+    if guess in words:
+        for x in attr:
+            for i in range(len(compared)):
+                if isinstance(compared[i], str):
+                    # if goal > guess, remove any words/items that are smaller or same
+                    if compared[i] == ">":
+                        if list(x.values())[i] <= list(guess_attr.values())[i]:
+                            new_words.remove(words[attr.index(x)])
+                            new_attr.remove(x)
+                            break
+                    # if goal < guess, remove any words/items that are bigger or same
+                    else:
+                        if list(x.values())[i] >= list(guess_attr.values())[i]:
+                            new_words.remove(words[attr.index(x)])
+                            new_attr.remove(x)
+                            break
+                # remove any words/items that dont have the same non-numbered attribute
+                else:
+                    if compared[i] == True:
+                        if list(x.values())[i] != list(guess_attr.values())[i]:
+                            new_words.remove(words[attr.index(x)])
+                            new_attr.remove(x)
+                            break
+    print("Would you like to see the new list? [Y/N]")
+    see_list = input()
+    if see_list == "Y" or see_list == "y":
+        print(new_words)
+    # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
+    return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time)
+
 # main function, read json file into list of words/items. Then plays the game
 def htn(json, word):
     ## NLP usage
@@ -142,7 +217,6 @@ def htn(json, word):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
     words, attr = create_dicts(json)
-
     # choose goal word by randomly selecting word/item from word bank
     goalword = word
     time = 1
@@ -156,7 +230,8 @@ def htn(json, word):
 
 if __name__ == '__main__':
     # open and collect dict from json file
-    words_filename = 'arknights.json'
+    words_filename = 'pokemon.json'
+    print("Using", words_filename)
 
     with open(words_filename) as f:
         data = json.load(f)
@@ -167,10 +242,20 @@ if __name__ == '__main__':
 
     # choose goal word by randomly selecting word/item from word bank
     goalword = random.choice(words)
-    print("Goal is", goalword)
+    input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
     time = 1
-    # guess = half_eliminate(words, attr) [EXAMPLE]
-    guess = rng_guess(words)
-    final, time = eliminate(words, attr, goalword, guess, time)
-    print("Final Guess is:", final)
-    print("Number of Guesses:", time)
+    if input1 == 1:
+        print("Goal is", goalword)
+        # guess = half_eliminate(words, attr) [EXAMPLE]
+        guess = rng_guess(words)
+        final, time = eliminate(words, attr, goalword, guess, time)
+        print("Final Guess is:", final)
+        print("Number of Guesses:", time)
+    elif input1 == 2:
+        print("\nGuess a word from the following list:")
+        print(words)
+        final, time = human_evaluate(words, words, attr, attr, goalword, time)
+        print("Congrats, the goal word is:", final)
+        print("Number of Guesses:", time)
+    else:
+        "Please input 1 or 2 next time..."
