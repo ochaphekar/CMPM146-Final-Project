@@ -248,7 +248,7 @@ def htn(json, word):
     print("Number of Guesses:", time)
 
 
-if __name__ == '__main__':
+def main():
     # open and collect dict from json file
     words_filename = 'arknights.json'
     print("Using", words_filename)
@@ -271,11 +271,24 @@ if __name__ == '__main__':
         final, time = eliminate(words, attr, goalword, guess, time)
         print("Final Guess is:", final)
         print("Number of Guesses:", time)
+        input2 = input("Play Again? [Y/N]: ")
+        if input2 == "Y" or input2 == "y":
+            main()
+        return
     elif input1 == 2:
         print("\nGuess a word from the following list:")
         print(words)
         final, time = human_evaluate(words, words, attr, attr, goalword, time)
         print("Congrats, the goal word is:", final)
         print("Number of Guesses:", time)
+        input2 = input("Play Again? [Y/N]: ")
+        if input2 == "Y" or input2 == "y":
+            main()
+        return
     else:
-        "Please input 1 or 2 next time..."
+        print("Please input 1 or 2...")
+        main()
+        return
+
+if __name__ == '__main__':
+    main()
