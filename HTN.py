@@ -160,13 +160,22 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
     #print(guess, compared)
     result = dict()
     for i in range(len(compared)):
-        if isinstance(compared[i], bool):
-            if compared[i] == True:
-                result[list(og_attr[og_words.index(guess)].values())[i]] = "Correct"
-            elif compared[i] == False:
-                result[list(og_attr[og_words.index(guess)].values())[i]] = "Incorrect"
+        if not isinstance(list(og_attr[og_words.index(guess)].values())[i], list):
+            if isinstance(compared[i], bool):
+                if compared[i] == True:
+                    result[list(og_attr[og_words.index(guess)].values())[i]] = "Correct"
+                elif compared[i] == False:
+                    result[list(og_attr[og_words.index(guess)].values())[i]] = "Incorrect"
+            else:
+                result[list(og_attr[og_words.index(guess)].values())[i]] = compared[i]
         else:
-            result[list(og_attr[og_words.index(guess)].values())[i]] = compared[i]
+            if isinstance(compared[i], bool):
+                if compared[i] == True:
+                    result[list(og_attr[og_words.index(guess)].keys())[i]] = "Correct"
+                elif compared[i] == False:
+                    result[list(og_attr[og_words.index(guess)].keys())[i]] = "Incorrect"
+            else:
+                result[list(og_attr[og_words.index(guess)].keys())[i]] = compared[i]
     print(result)
     new_words = words.copy()
     new_attr = attr.copy()
@@ -231,7 +240,7 @@ def htn(json, word):
 
 if __name__ == '__main__':
     # open and collect dict from json file
-    words_filename = 'pokemon.json'
+    words_filename = 'arknights.json'
     print("Using", words_filename)
 
     with open(words_filename) as f:
