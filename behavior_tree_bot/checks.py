@@ -34,9 +34,9 @@ def filter_by_palindromes(words, guessed_attribute, guess_accuracy):
     filtered_words = []
     
     for word in words:
-        if guess_accuracy != 0 and word["is_palindrome"] == False:
+        if guess_accuracy != 0 and word["is_palindrome"] != guessed_attribute:
             filtered_words.append(word)
-        elif guess_accuracy == 0 and word["is_palindrome"] == True:
+        elif guess_accuracy == 0 and word["is_palindrome"] == guessed_attribute:
             filtered_words.append(word)            
     return filtered_words
 
