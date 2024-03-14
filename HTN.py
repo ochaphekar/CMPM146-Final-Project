@@ -133,7 +133,7 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
         guess = str(input())
     if guess not in og_words:
         print("Please try again, remember to use capitals and punctuation if needed...")
-        human_evaluate(words, attr, goal, time)
+        human_evaluate(og_words, og_words, og_attr, og_attr, goal, time)
     if goal == guess:
         return guess, time
     # otherwise start eliminating
