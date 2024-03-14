@@ -120,6 +120,11 @@ def eliminate(words, attr, goal, guess, time):
                         new_words.remove(words[attr.index(x)])
                         new_attr.remove(x)
                         break
+                else:
+                    if list(x.values())[i] == list(guess_attr.values())[i]:
+                        new_words.remove(words[attr.index(x)])
+                        new_attr.remove(x)
+                        break
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     if len(new_words) != len(words):
         print("Words Left: ", new_words)
@@ -200,6 +205,11 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
                 else:
                     if compared[i] == True:
                         if list(x.values())[i] != list(guess_attr.values())[i]:
+                            new_words.remove(words[attr.index(x)])
+                            new_attr.remove(x)
+                            break
+                    else:
+                        if list(x.values())[i] == list(guess_attr.values())[i]:
                             new_words.remove(words[attr.index(x)])
                             new_attr.remove(x)
                             break
