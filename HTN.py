@@ -128,7 +128,7 @@ def eliminate(words, attr, goal, guess, time):
 def human_evaluate(og_words, words, og_attr, attr, goal, time):
     # if guess word is same as goal word, found it
     if time > 1:
-        guess = str(input("Guess a new word:"))
+        guess = str(input("Guess a new word: "))
     else:
         guess = str(input())
     if guess not in og_words:
@@ -162,11 +162,11 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
     for i in range(len(compared)):
         if isinstance(compared[i], bool):
             if compared[i] == True:
-                result[list(attr[0].values())[i]] = "Correct"
+                result[list(og_attr[og_words.index(guess)].values())[i]] = "Correct"
             elif compared[i] == False:
-                result[list(attr[0].values())[i]] = "Incorrect"
+                result[list(og_attr[og_words.index(guess)].values())[i]] = "Incorrect"
         else:
-            result[list(attr[0].values())[i]] = compared[i]
+            result[list(og_attr[og_words.index(guess)].values())[i]] = compared[i]
     print(result)
     new_words = words.copy()
     new_attr = attr.copy()
