@@ -150,10 +150,10 @@ def eliminate(words, attr, goal, guess, time):
 
 def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False, word_vectors = None):
     # if guess word is same as goal word, found it
-    if time > 1:
+    if time > 0:
         guess = str(input("\nGuess a new word: "))
     else:
-        guess = str(input())
+        guess = str(input("\n"))
     if guess not in og_words:
         print("Please try again, remember to use capitals and punctuation if needed...")
         human_evaluate(og_words, og_words, og_attr, og_attr, goal, time)
