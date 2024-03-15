@@ -230,9 +230,20 @@ def htn(json, word):
 
 
 if __name__ == '__main__':
+    usingNLP = False
+
     # open and collect dict from json file
-    words_filename = 'pokemon.json'
+    words_filename = 'dictionary.json'
     print("Using", words_filename)
+
+    if words_filename == 'dictionary.json':
+        usingNLP = True
+        # NLP needed
+        snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+        glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+        
+        snli_data = load_jsonl(snli_jsonl_path)
+        word_vectors = load_glove_vectors(glove_model_path)
 
     with open(words_filename) as f:
         data = json.load(f)
@@ -256,6 +267,8 @@ if __name__ == '__main__':
         print("\nGuess a word from the following list:")
         print(words)
         final, time = human_evaluate(words, words, attr, attr, goalword, time)
+        #if usingNLP:
+        #    output_similarity(final, goalword, word_vectors)
         print("Congrats, the goal word is:", final)
         print("Number of Guesses:", time)
     else:
