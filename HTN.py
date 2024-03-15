@@ -94,35 +94,37 @@ def eliminate(words, attr, goal, guess, time):
                 compared.append(False)
     new_words = words.copy()
     new_attr = attr.copy()
+    index = -1
     # run through all words/items in list and remove any that don't match the new criteria
     for x in attr:
+        index += 1
         for i in range(len(compared) - 1):
             if isinstance(compared[i], str):
                 # if goal > guess, remove any words/items that are smaller or same
                 if compared[i] == ">":
                     if list(x.values())[i] <= list(guess_attr.values())[i]:
-                        print(words[attr.index(x)], "eliminated")
-                        new_words.remove(words[attr.index(x)])
+                        print(words[index], "eliminated")
+                        new_words.remove(words[index])
                         new_attr.remove(x)
                         break
                 # if goal < guess, remove any words/items that are bigger or same
                 else:
                     if list(x.values())[i] >= list(guess_attr.values())[i]:
-                        print(words[attr.index(x)], "eliminated")
-                        new_words.remove(words[attr.index(x)])
+                        print(words[index], "eliminated")
+                        new_words.remove(words[index])
                         new_attr.remove(x)
                         break
             # remove any words/items that dont have the same non-numbered attribute
             else:
                 if compared[i] == True:
                     if list(x.values())[i] != list(guess_attr.values())[i]:
-                        print(words[attr.index(x)], "eliminated")
-                        new_words.remove(words[attr.index(x)])
+                        print(words[index], "eliminated")
+                        new_words.remove(words[index])
                         new_attr.remove(x)
                         break
                 else:
                     if list(x.values())[i] == list(guess_attr.values())[i]:
-                        new_words.remove(words[attr.index(x)])
+                        new_words.remove(words[index])
                         new_attr.remove(x)
                         break
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
@@ -185,36 +187,37 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
     new_words = words.copy()
     new_attr = attr.copy()
     # run through all words/items in list and remove any that don't match the new criteria
+    index = -1
     if guess in words:
         for x in attr:
+            index += 1
             for i in range(len(compared)):
                 if isinstance(compared[i], str):
                     # if goal > guess, remove any words/items that are smaller or same
                     if compared[i] == ">":
                         if list(x.values())[i] <= list(guess_attr.values())[i]:
-                            new_words.remove(words[attr.index(x)])
+                            new_words.remove(words[index])
                             new_attr.remove(x)
                             break
                     # if goal < guess, remove any words/items that are bigger or same
                     else:
                         if list(x.values())[i] >= list(guess_attr.values())[i]:
-                            new_words.remove(words[attr.index(x)])
+                            new_words.remove(words[index])
                             new_attr.remove(x)
                             break
                 # remove any words/items that dont have the same non-numbered attribute
                 else:
                     if compared[i] == True:
                         if list(x.values())[i] != list(guess_attr.values())[i]:
-                            new_words.remove(words[attr.index(x)])
+                            new_words.remove(words[index])
                             new_attr.remove(x)
                             break
                     else:
                         if list(x.values())[i] == list(guess_attr.values())[i]:
-                            new_words.remove(words[attr.index(x)])
+                            new_words.remove(words[index])
                             new_attr.remove(x)
                             break
-    print("Would you like to see the new list? [Y/N]")
-    see_list = input()
+    see_list = input("Would you like to see the new list? [Y/N]: ")
     if see_list == "Y" or see_list == "y":
         print(new_words)
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
@@ -250,7 +253,7 @@ def htn(json, word):
 
 def main():
     # open and collect dict from json file
-    words_filename = 'arknights.json'
+    words_filename = 'dictionary.json'
     print("Using", words_filename)
 
     with open(words_filename) as f:
