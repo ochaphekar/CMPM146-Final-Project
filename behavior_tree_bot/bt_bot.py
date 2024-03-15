@@ -51,31 +51,12 @@ if __name__ == '__main__':
     words_filename = 'pokemon.json'
     with open(words_filename) as f:
         data = json.load(f)
-    
-    # words is word bank in list form, attr is list of their respective attributes
-    # words and attr share the same index
-    words, attr = create_dicts(data)
 
     # choose goal word by randomly selecting word/item from word bank
     goalword = random.choice(data.keys())
     print("Goal is", goalword)
 
     behavior_tree = setup_behavior_tree()
-    try:
-        map_data = ''
-        while True:
-            current_line = input()
-            if len(current_line) >= 2 and current_line.startswith("go"):
-                planet_wars = PlanetWars(map_data)
-                do_turn(planet_wars)
-                finish_turn()
-                map_data = ''
-            else:
-                map_data += current_line + '\n'
+    do_turn(data, goalword)
 
-    except KeyboardInterrupt:
-        print('ctrl-c, leaving ...')
-    except Exception:
-        traceback.print_exc(file=sys.stdout)
-        logging.exception("Error in bot.")
 
