@@ -132,7 +132,7 @@ def eliminate(words, attr, goal, guess, time):
         print("Words Left: ", new_words)
     return eliminate(new_words, new_attr, goal, rng_guess(new_words), time)
 
-def human_evaluate(og_words, words, og_attr, attr, goal, time):
+def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False, word_vectors = None):
     # if guess word is same as goal word, found it
     if time > 1:
         guess = str(input("Guess a new word: "))
@@ -184,6 +184,10 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
             else:
                 result[list(og_attr[og_words.index(guess)].keys())[i]] = compared[i]
     print(result)
+
+    if usingNLP:
+        output_similarity(guess, goal, word_vectors)
+
     new_words = words.copy()
     new_attr = attr.copy()
     # run through all words/items in list and remove any that don't match the new criteria
@@ -221,7 +225,7 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
     if see_list == "Y" or see_list == "y":
         print(new_words)
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
-    return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time)
+    return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time, usingNLP, word_vectors)
 
 # main function, read json file into list of words/items. Then plays the game
 def htn(json, word):
@@ -251,7 +255,7 @@ def htn(json, word):
     print("Number of Guesses:", time)
 
 
-def main():
+def main(word_vectors):
     usingNLP = False
 
     # open and collect dict from json file
@@ -260,12 +264,8 @@ def main():
 
     if words_filename == 'dictionary.json':
         usingNLP = True
-        # NLP needed
-        snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-        glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
-        
-        snli_data = load_jsonl(snli_jsonl_path)
-        word_vectors = load_glove_vectors(glove_model_path)
+    else:
+        word_vectors = None
 
     with open(words_filename) as f:
         data = json.load(f)
@@ -287,24 +287,27 @@ def main():
         print("Number of Guesses:", time)
         input2 = input("Play Again? [Y/N]: ")
         if input2 == "Y" or input2 == "y":
-            main()
+            main(word_vectors)
         return
     elif input1 == 2:
         print("\nGuess a word from the following list:")
         print(words)
-        final, time = human_evaluate(words, words, attr, attr, goalword, time)
-        #if usingNLP:
-        #    output_similarity(final, goalword, word_vectors)
+        final, time = human_evaluate(words, words, attr, attr, goalword, time, usingNLP, word_vectors)
         print("Congrats, the goal word is:", final)
         print("Number of Guesses:", time)
         input2 = input("Play Again? [Y/N]: ")
         if input2 == "Y" or input2 == "y":
-            main()
+            main(word_vectors)
         return
     else:
         print("Please input 1 or 2...")
-        main()
+        main(word_vectors)
         return
     
 if __name__ == '__main__':
-    main()
+    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+    
+    snli_data = load_jsonl(snli_jsonl_path)
+    word_vectors = load_glove_vectors(glove_model_path)
+    main(word_vectors)
