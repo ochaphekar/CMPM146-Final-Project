@@ -28,6 +28,20 @@ def cosine_similarity(vector1, vector2):
     similarity = dot_product / (norm1 * norm2)
     return similarity
 
+def output_similarity(word1, word2, word_vectors):
+    # Check if the words exist in the GloVe vectors
+    if word1 in word_vectors and word2 in word_vectors:
+        vector1 = word_vectors[word1]
+        vector2 = word_vectors[word2]
+
+        # Calculate cosine similarity between the two word vectors
+        similarity_score = cosine_similarity(vector1, vector2)
+        print("Cosine Similarity Score between '{}' and '{}': {:.4f}".format(word1, word2, similarity_score))
+        return similarity_score
+    else:
+        print("One or both words not found in the GloVe vectors.")
+        return None
+
 # Example usage
 snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
 glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
@@ -48,5 +62,10 @@ vector1 = np.mean([word_vectors[token] for token in tokens1 if token in word_vec
 vector2 = np.mean([word_vectors[token] for token in tokens2 if token in word_vectors], axis=0)
 
 # Calculate cosine similarity between the two sentence vectors
-similarity_score = cosine_similarity(vector1, vector2)
+similarity_score = output_similarity("dog", "cat", word_vectors)
+
+#cosine_similarity(vector1, vector2)
+
 print("Cosine Similarity Score:", similarity_score)
+
+

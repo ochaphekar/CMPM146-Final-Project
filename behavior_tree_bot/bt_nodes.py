@@ -3,9 +3,9 @@ import logging
 
 
 def log_execution(fn):
-    def logged_fn(self, state):
+    def logged_fn(self, json, word):
         logging.debug('Executing:' + str(self))
-        result = fn(self, state)
+        result = fn(self, json, word)
         logging.debug('Result: ' + str(self) + ' -> ' + ('Success' if result else 'Failure'))
         return result
     return logged_fn
@@ -16,7 +16,7 @@ class Node:
     def __init__(self):
         raise NotImplementedError
 
-    def execute(self, state):
+    def execute(self, json, word):
         raise NotImplementedError
 
     def copy(self):
@@ -28,7 +28,7 @@ class Composite(Node):
         self.child_nodes = child_nodes
         self.name = name
 
-    def execute(self, state):
+    def execute(self, json, word):
         raise NotImplementedError
 
     def __str__(self):
@@ -47,9 +47,9 @@ class Composite(Node):
 ############################### Composite Nodes ##################################
 class Selector(Composite):
     @log_execution
-    def execute(self, state):
+    def execute(self, json, word):
         for child_node in self.child_nodes:
-            success = child_node.execute(state)
+            success = child_node.execute(json, word)
             if success:
                 return True
         else:  # for loop completed without success; return failure
@@ -58,9 +58,9 @@ class Selector(Composite):
 
 class Sequence(Composite):
     @log_execution
-    def execute(self, state):
+    def execute(self, json, word):
         for child_node in self.child_nodes:
-            continue_execution = child_node.execute(state)
+            continue_execution = child_node.execute(json, word)
             if not continue_execution:
                 return False
         else:  # for loop completed without failure; return success
@@ -73,8 +73,8 @@ class Check(Node):
         self.check_function = check_function
 
     @log_execution
-    def execute(self, state):
-        return self.check_function(state)
+    def execute(self, json, word):
+        return self.check_function(json, word)
 
     def __str__(self):
         return self.__class__.__name__ + ': ' + self.check_function.__name__
@@ -85,8 +85,8 @@ class Action(Node):
         self.action_function = action_function
 
     @log_execution
-    def execute(self, state):
-        return self.action_function(state)
+    def execute(self, json, word):
+        return self.action_function(json, word)
 
     def __str__(self):
         return self.__class__.__name__ + ': ' + self.action_function.__name__
