@@ -1,0 +1,402 @@
+{
+    "argenti": {
+        "Faction": "Knights of Beauty",
+        "Element": "Physical",
+        "Path": "Erudition",
+        "Gender": "Male",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "bailu": {
+        "Faction": "Xianzhou",
+        "Element": "Electric",
+        "Path": "Abundance",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "black swan": {
+        "Faction": "Penacony",
+        "Element": "Wind",
+        "Path": "Nihility",
+        "Gender": "Female",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "blade": {
+        "Faction": "Stellaron Hunters",
+        "Element": "Wind",
+        "Path": "Destruction",
+        "Gender": "Male",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "bronya": {
+        "Faction": "Jarilo",
+        "Element": "Wind",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "clara": {
+        "Faction": "Jarilo",
+        "Element": "Physical",
+        "Path": "Destruction",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "dan heng il": {
+        "Faction": "Xianzhou",
+        "Element": "Imaginary",
+        "Path": "Destruction",
+        "Gender": "Male",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "dr ratio": {
+        "Faction": "Space Station",
+        "Element": "Imaginary",
+        "Path": "Hunt",
+        "Gender": "Male",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "fu xuan": {
+        "Faction": "Xianzhou",
+        "Element": "Quantum",
+        "Path": "Preservation",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "gepard": {
+        "Faction": "Jarilo",
+        "Element": "Ice",
+        "Path": "Preservation",
+        "Gender": "Male",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "himeko": {
+        "Faction": "Express",
+        "Element": "Fire",
+        "Path": "Erudition",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "huohuo": {
+        "Faction": "Xianzhou",
+        "Element": "Wind",
+        "Path": "Abundance",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "jing yuan": {
+        "Faction": "Xianzhou",
+        "Element": "Electric",
+        "Path": "Erudition",
+        "Gender": "Male",
+        "Weekly": "Doomsday",
+        "Rarity": 5
+    },
+    "jingliu": {
+        "Faction": "Xianzhou",
+        "Element": "Ice",
+        "Path": "Destruction",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "kafka": {
+        "Faction": "Stellaron Hunters",
+        "Element": "Electric",
+        "Path": "Nihility",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "luocha": {
+        "Faction": "Xianzhou",
+        "Element": "Imaginary",
+        "Path": "Abundance",
+        "Gender": "Male",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "misha": {
+        "Faction": "Penacony",
+        "Element": "Ice",
+        "Path": "Destruction",
+        "Gender": "Male",
+        "Weekly": "Swarm",
+        "Rarity": 4
+    },
+    "ruan mei": {
+        "Faction": "Space Station",
+        "Element": "Ice",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "seele": {
+        "Faction": "Jarilo",
+        "Element": "Quantum",
+        "Path": "Hunt",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "silver wolf": {
+        "Faction": "Stellaron Hunters",
+        "Element": "Quantum",
+        "Path": "Nihility",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 5
+    },
+    "sparkle": {
+        "Faction": "Penacony",
+        "Element": "Quantum",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "topaz": {
+        "Faction": "IPC",
+        "Element": "Fire",
+        "Path": "Hunt",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 5
+    },
+    "stelle": {
+        "Faction": "Express",
+        "Element": "Fire",
+        "Path": "Preservation",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 5
+    },
+    "caelus": {
+        "Faction": "Express",
+        "Element": "Physical",
+        "Path": "Destruction",
+        "Gender": "Male",
+        "Weekly": "Doomsday",
+        "Rarity": 5
+    },
+    "welt": {
+        "Faction": "Express",
+        "Element": "Imaginary",
+        "Path": "Nihility",
+        "Gender": "Male",
+        "Weekly": "Doomsday",
+        "Rarity": 5
+    },
+    "yanqing": {
+        "Faction": "Xianzhou",
+        "Element": "Ice",
+        "Path": "Hunt",
+        "Gender": "Male",
+        "Weekly": "Cocolia",
+        "Rarity": 5
+    },
+    "arlan": {
+        "Faction": "Space Station",
+        "Element": "Electric",
+        "Path": "Destruction",
+        "Gender": "Male",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "asta": {
+        "Faction": "Space Station",
+        "Element": "Fire",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "dan heng": {
+        "Faction": "Express",
+        "Element": "Wind",
+        "Path": "Hunt",
+        "Gender": "Male",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "guinaifen": {
+        "Faction": "Xianzhou",
+        "Element": "Fire",
+        "Path": "Nihility",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 4
+    },
+    "hanya": {
+        "Faction": "Xianzhou",
+        "Element": "Physical",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 4
+    },
+    "herta": {
+        "Faction": "Space Station",
+        "Element": "Ice",
+        "Path": "Erudition",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "hook": {
+        "Faction": "Jarilo",
+        "Element": "Fire",
+        "Path": "Destruction",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 4
+    },
+    "luka": {
+        "Faction": "Jarilo",
+        "Element": "Physical",
+        "Path": "Nihility",
+        "Gender": "Male",
+        "Weekly": "Phantylia",
+        "Rarity": 4
+    },
+    "lynx": {
+        "Faction": "Jarilo",
+        "Element": "Quantum",
+        "Path": "Abundance",
+        "Gender": "Female",
+        "Weekly": "Phantylia",
+        "Rarity": 4
+    },
+    "march 7th": {
+        "Faction": "Express",
+        "Element": "Ice",
+        "Path": "Preservation",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "natasha": {
+        "Faction": "Jarilo",
+        "Element": "Physical",
+        "Path": "Abundance",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 4
+    },
+    "pela": {
+        "Faction": "Jarilo",
+        "Element": "Ice",
+        "Path": "Nihility",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 4
+    },
+    "qingque": {
+        "Faction": "Xianzhou",
+        "Element": "Quantum",
+        "Path": "Erudition",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 4
+    },
+    "sampo": {
+        "Faction": "Jarilo",
+        "Element": "Wind",
+        "Path": "Nihility",
+        "Gender": "Male",
+        "Weekly": "Cocolia",
+        "Rarity": 4
+    },
+    "serval": {
+        "Faction": "Jarilo",
+        "Element": "Electric",
+        "Path": "Erudition",
+        "Gender": "Female",
+        "Weekly": "Cocolia",
+        "Rarity": 4
+    },
+    "sushang": {
+        "Faction": "Xianzhou",
+        "Element": "Physical",
+        "Path": "Hunt",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "tingyun": {
+        "Faction": "Xianzhou",
+        "Element": "Electric",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "xueyi": {
+        "Faction": "Xianzhou",
+        "Element": "Quantum",
+        "Path": "Destruction",
+        "Gender": "Female",
+        "Weekly": "Swarm",
+        "Rarity": 4
+    },
+    "yukong": {
+        "Faction": "Xianzhou",
+        "Element": "Imaginary",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Doomsday",
+        "Rarity": 4
+    },
+    "acheron": {
+        "Faction": "Penacony",
+        "Element": "Electric",
+        "Path": "Nihility",
+        "Gender": "Female",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "aventurine": {
+        "Faction": "IPC",
+        "Element": "Imaginary",
+        "Path": "Preservation",
+        "Gender": "Male",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "gallagher": {
+        "Faction": "Penacony",
+        "Element": "Fire",
+        "Path": "Abundance",
+        "Gender": "Male",
+        "Weekly": "Swarm",
+        "Rarity": 4
+    },
+    "robin": {
+        "Faction": "Penacony",
+        "Element": "Physical",
+        "Path": "Harmony",
+        "Gender": "Female",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    },
+    "boothill": {
+        "Faction": "Penacony",
+        "Element": "Physical",
+        "Path": "Hunt",
+        "Gender": "Male",
+        "Weekly": "Swarm",
+        "Rarity": 5
+    }
+}

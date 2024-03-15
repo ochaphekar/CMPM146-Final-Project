@@ -64,11 +64,14 @@ def create_dicts(data):
 def rng_guess(words):
     guess = random.choice(words)
     return guess
-    
+
+def intersection(list1, list2):
+    list3 = [v for v in list1 if v in list2]
+    return list3
 
 def eliminate(words, attr, goal, guess, time):
     # if guess word is same as goal word, found it
-    print("Guessing", guess)
+    print("Guessing", guess, "\n")
     if goal == guess:
         return guess, time
     # otherwise start eliminating
@@ -86,6 +89,11 @@ def eliminate(words, attr, goal, guess, time):
                 compared.append("<")
             else:
                 compared.append(True)
+        elif isinstance(goal_attr[x], list):
+            if not intersection(goal_attr[x], guess_attr[x]):
+                compared.append(False)
+            else:
+                compared.append(intersection(goal_attr[x], guess_attr[x]))
         # else check if attributes are the same or not
         else:
             if goal_attr[x] == guess_attr[x]:
@@ -114,6 +122,13 @@ def eliminate(words, attr, goal, guess, time):
                         new_words.remove(words[index])
                         new_attr.remove(x)
                         break
+            elif isinstance(compared[i], list):
+                for l in compared[i]:
+                    if l not in list(x.values())[i]:
+                        print(words[index], "eliminated")
+                        new_words.remove(words[index])
+                        new_attr.remove(x)
+                        break
             # remove any words/items that dont have the same non-numbered attribute
             else:
                 if compared[i] == True:
@@ -124,25 +139,24 @@ def eliminate(words, attr, goal, guess, time):
                         break
                 else:
                     if list(x.values())[i] == list(guess_attr.values())[i]:
+                        print(words[index], "eliminated")
                         new_words.remove(words[index])
                         new_attr.remove(x)
                         break
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     if len(new_words) != len(words):
-        print("Words Left: ", new_words)
+        print("\nWords Left:", new_words, "\n")
     return eliminate(new_words, new_attr, goal, rng_guess(new_words), time)
 
 def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False, word_vectors = None):
     # if guess word is same as goal word, found it
     if time > 1:
-        guess = str(input("Guess a new word: "))
+        guess = str(input("\nGuess a new word: "))
     else:
         guess = str(input())
     if guess not in og_words:
         print("Please try again, remember to use capitals and punctuation if needed...")
         human_evaluate(og_words, og_words, og_attr, og_attr, goal, time)
-    if goal == guess:
-        return guess, time
     # otherwise start eliminating
     time += 1
     guess_attr = og_attr[og_words.index(guess)]
@@ -158,6 +172,11 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
                 compared.append("<")
             else:
                 compared.append(True)
+        elif isinstance(goal_attr[x], list):
+            if not intersection(goal_attr[x], guess_attr[x]):
+                compared.append(False)
+            else:
+                compared.append(intersection(goal_attr[x], guess_attr[x]))
         # else check if attributes are the same or not
         else:
             if goal_attr[x] == guess_attr[x]:
@@ -167,23 +186,21 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
     #print(guess, compared)
     result = dict()
     for i in range(len(compared)):
-        if not isinstance(list(og_attr[og_words.index(guess)].values())[i], list):
-            if isinstance(compared[i], bool):
-                if compared[i] == True:
-                    result[list(og_attr[og_words.index(guess)].values())[i]] = "Correct"
-                elif compared[i] == False:
-                    result[list(og_attr[og_words.index(guess)].values())[i]] = "Incorrect"
-            else:
-                result[list(og_attr[og_words.index(guess)].values())[i]] = compared[i]
-        else:
-            if isinstance(compared[i], bool):
-                if compared[i] == True:
-                    result[list(og_attr[og_words.index(guess)].keys())[i]] = "Correct"
-                elif compared[i] == False:
-                    result[list(og_attr[og_words.index(guess)].keys())[i]] = "Incorrect"
+        if isinstance(compared[i], bool):
+            if compared[i] == True:
+                result[list(og_attr[og_words.index(guess)].keys())[i]] = "Correct"
+            elif compared[i] == False:
+                result[list(og_attr[og_words.index(guess)].keys())[i]] = "Incorrect"
+        elif isinstance(compared[i], list):
+            if not compared[i]:
+                result[list(og_attr[og_words.index(guess)].keys())[i]] = "Incorrect"
             else:
                 result[list(og_attr[og_words.index(guess)].keys())[i]] = compared[i]
-    print(result)
+        else:
+            result[list(og_attr[og_words.index(guess)].keys())[i]] = compared[i]
+    print("\n", result, "\n")
+    if goal == guess:
+        return guess, time
 
     if usingNLP:
         output_similarity(guess, goal, word_vectors)
@@ -209,6 +226,12 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
                             new_words.remove(words[index])
                             new_attr.remove(x)
                             break
+                elif isinstance(compared[i], list):
+                    for l in compared[i]:
+                        if l not in list(x.values())[i]:
+                            new_words.remove(words[index])
+                            new_attr.remove(x)
+                            break
                 # remove any words/items that dont have the same non-numbered attribute
                 else:
                     if compared[i] == True:
@@ -223,7 +246,7 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
                             break
     see_list = input("Would you like to see the new list? [Y/N]: ")
     if see_list == "Y" or see_list == "y":
-        print(new_words)
+        print("\n", new_words, "\n")
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time, usingNLP, word_vectors)
 
@@ -252,7 +275,7 @@ def htn(json, word):
     guess = rng_guess(words)
     final, time = eliminate(words, attr, goalword, guess, time)
     print("Final Guess is:", final)
-    print("Number of Guesses:", time)
+    print("Number of Guesses:", time, "\n")
 
 
 def main(word_vectors):
@@ -260,7 +283,7 @@ def main(word_vectors):
 
     # open and collect dict from json file
     words_filename = 'dictionary.json'
-    print("Using", words_filename)
+    print("Using", words_filename, "\n")
 
     if words_filename == 'dictionary.json':
         usingNLP = True
@@ -277,15 +300,15 @@ def main(word_vectors):
     # choose goal word by randomly selecting word/item from word bank
     goalword = random.choice(words)
     input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
-    time = 1
+    time = 0
     if input1 == 1:
-        print("Goal is", goalword)
+        print("\nGoal is", goalword, "\n")
         # guess = half_eliminate(words, attr) [EXAMPLE]
         guess = rng_guess(words)
         final, time = eliminate(words, attr, goalword, guess, time)
-        print("Final Guess is:", final)
+        print("Found Goal Word:", final)
         print("Number of Guesses:", time)
-        input2 = input("Play Again? [Y/N]: ")
+        input2 = input("\nPlay Again? [Y/N]: ")
         if input2 == "Y" or input2 == "y":
             main(word_vectors)
         return
@@ -295,7 +318,7 @@ def main(word_vectors):
         final, time = human_evaluate(words, words, attr, attr, goalword, time, usingNLP, word_vectors)
         print("Congrats, the goal word is:", final)
         print("Number of Guesses:", time)
-        input2 = input("Play Again? [Y/N]: ")
+        input2 = input("\nPlay Again? [Y/N]: ")
         if input2 == "Y" or input2 == "y":
             main(word_vectors)
         return
