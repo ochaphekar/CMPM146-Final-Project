@@ -1,25 +1,41 @@
 import sys
+import random
 sys.path.insert(0, '../')
 
 #dictionary behaviors
 
 #greedy behavior - looks for basically getting really lucky w/ the palindrome or index to massively cut search space early
-"""
+
 def greedy_behavior(words):
-    if length 
-    length_weight = [x1,x2,x3,x4,x5,x6,x7...];
-    vowel_weight = [y1,y2,y3,y4,y5,y6,y7...];
-    acceptable_weighted_value = z;
+    index_weight = [2, 8, 7, 13, 15, 9, 18, 11, 4, 22, 23, 16, 12, 17, 3, 10, 24, 14, 5, 1, 20, 19, 6, 26, 21, 25] #a-z
+    length_weight = [15, 14, 12, 11, 9, 7, 5, 3, 1, 2, 4, 6, 8, 10, 13] #1-15 letters
+    a_weight = [1, 2, 3, 4, 5, 6, 7] #0-6 a's
+    #a_weight = [y1,y2,y3,y4,y5,y6,y7] 
+    e_weight = [1, 2, 3, 4, 5, 6, 7] #0-6 e's
+    #e_weight = [y1,y2,y3,y4,y5,y6,y7] 
+    i_weight = [1, 2, 3, 4, 5, 6, 7] #0-6 i's
+    #i_weight = [y1,y2,y3,y4,y5,y6,y7] 
+    o_weight = [1, 2, 3, 4, 5, 6, 7] #0-6 o's
+    #o_weight = [y1,y2,y3,y4,y5,y6,y7] 
+    u_weight = [1, 2, 3, 4, 5, 6, 7] #0-6 u's
+    #u_weight = [y1,y2,y3,y4,y5,y6,y7] 
+    acceptable_weighted_value = 30
     
-    words_to_guess_from = empty list;
+    words_to_guess_from = []
+    best_word = None
+    best_value = 0
     
-    For each word in words:
-        weighted_value = length_weight[word.length] + vowel_weight[word.vowel_count]
-        if weighted_value > acceptable_weighted_value:
+    for word in words:
+        weighted_value = length_weight[word["length"] - 1] + a_weight[word["contains_a"] - 1] + e_weight[word["contains_e"] - 1] + i_weight[word["contains_i"] - 1] + o_weight[word["contains_o"] - 1] + u_weight[word["contains_u"] - 1] + index_weight[word["index"] - 1]
+        if weighted_value > best_value:
+            best_value = weighted_value
+            best_word = word
+        if weighted_value >= acceptable_weighted_value:
             words_to_guess_from.append(word)
-            
-    return random in words_to_guess_from;
-"""
+    
+    if words_to_guess_from == []:
+        return best_word
+    return random.choice(words_to_guess_from)
 
 
 
@@ -50,20 +66,14 @@ if word is ranked 50 on thee list, it has a 10 weight
 
 use this to prioritize contexto once a good contexto word is found
 
+def calculate_weight(rank):
+    # Define the maximum rank and the corresponding weight
+    max_rank = 20000
+    max_weight = 0.01
+    
+    # Calculate the weight based on the rank
+    weight = max_weight * (max_rank / rank)
+    
+    return weight
 
 """
-#below is the code from p3?
-
-"""
-Here is where you will implement your functions for action nodes, typically issuing orders. 
-Each function should only take the game state as a parameter. There are two actions already 
-implemented here as examples: attack_weakest_enemy_planet and spread_to_weakest_neutral_planet.
-"""
-
-# attack node 1
-
-# attack node 2
-
-# attack node 3
-
-# attack node 4
