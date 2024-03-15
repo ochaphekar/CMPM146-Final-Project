@@ -120,6 +120,11 @@ def eliminate(words, attr, goal, guess, time):
                         new_words.remove(words[attr.index(x)])
                         new_attr.remove(x)
                         break
+                else:
+                    if list(x.values())[i] == list(guess_attr.values())[i]:
+                        new_words.remove(words[attr.index(x)])
+                        new_attr.remove(x)
+                        break
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     if len(new_words) != len(words):
         print("Words Left: ", new_words)
@@ -160,13 +165,22 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
     #print(guess, compared)
     result = dict()
     for i in range(len(compared)):
-        if isinstance(compared[i], bool):
-            if compared[i] == True:
-                result[list(og_attr[og_words.index(guess)].values())[i]] = "Correct"
-            elif compared[i] == False:
-                result[list(og_attr[og_words.index(guess)].values())[i]] = "Incorrect"
+        if not isinstance(list(og_attr[og_words.index(guess)].values())[i], list):
+            if isinstance(compared[i], bool):
+                if compared[i] == True:
+                    result[list(og_attr[og_words.index(guess)].values())[i]] = "Correct"
+                elif compared[i] == False:
+                    result[list(og_attr[og_words.index(guess)].values())[i]] = "Incorrect"
+            else:
+                result[list(og_attr[og_words.index(guess)].values())[i]] = compared[i]
         else:
-            result[list(og_attr[og_words.index(guess)].values())[i]] = compared[i]
+            if isinstance(compared[i], bool):
+                if compared[i] == True:
+                    result[list(og_attr[og_words.index(guess)].keys())[i]] = "Correct"
+                elif compared[i] == False:
+                    result[list(og_attr[og_words.index(guess)].keys())[i]] = "Incorrect"
+            else:
+                result[list(og_attr[og_words.index(guess)].keys())[i]] = compared[i]
     print(result)
     new_words = words.copy()
     new_attr = attr.copy()
@@ -191,6 +205,11 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time):
                 else:
                     if compared[i] == True:
                         if list(x.values())[i] != list(guess_attr.values())[i]:
+                            new_words.remove(words[attr.index(x)])
+                            new_attr.remove(x)
+                            break
+                    else:
+                        if list(x.values())[i] == list(guess_attr.values())[i]:
                             new_words.remove(words[attr.index(x)])
                             new_attr.remove(x)
                             break
@@ -229,7 +248,7 @@ def htn(json, word):
     print("Number of Guesses:", time)
 
 
-if __name__ == '__main__':
+def main():
     usingNLP = False
 
     # open and collect dict from json file
@@ -263,6 +282,10 @@ if __name__ == '__main__':
         final, time = eliminate(words, attr, goalword, guess, time)
         print("Final Guess is:", final)
         print("Number of Guesses:", time)
+        input2 = input("Play Again? [Y/N]: ")
+        if input2 == "Y" or input2 == "y":
+            main()
+        return
     elif input1 == 2:
         print("\nGuess a word from the following list:")
         print(words)
@@ -271,5 +294,14 @@ if __name__ == '__main__':
         #    output_similarity(final, goalword, word_vectors)
         print("Congrats, the goal word is:", final)
         print("Number of Guesses:", time)
+        input2 = input("Play Again? [Y/N]: ")
+        if input2 == "Y" or input2 == "y":
+            main()
+        return
     else:
-        "Please input 1 or 2 next time..."
+        print("Please input 1 or 2...")
+        main()
+        return
+    
+if __name__ == '__main__':
+    main()
