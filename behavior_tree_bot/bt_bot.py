@@ -51,7 +51,7 @@ if __name__ == '__main__':
     words_filename = 'pokemon.json'
     with open(words_filename) as f:
         data = json.load(f)
-    
+
     # choose goal word by randomly selecting word/item from word bank
     goalword = random.choice(data.keys())
     print("Goal is", goalword)
