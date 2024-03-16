@@ -278,21 +278,7 @@ def htn(json, word):
     print("Number of Guesses:", time, "\n")
 
 
-def main(word_vectors):
-    usingNLP = False
-
-    # open and collect dict from json file
-    words_filename = 'dictionary.json'
-    print("Using", words_filename, "\n")
-
-    if words_filename == 'dictionary.json':
-        usingNLP = True
-    else:
-        word_vectors = None
-
-    with open(words_filename) as f:
-        data = json.load(f)
-    
+def main(word_vectors, data, usingNLP):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
     words, attr = create_dicts(data)
@@ -310,7 +296,7 @@ def main(word_vectors):
         print("Number of Guesses:", time)
         input2 = input("\nPlay Again? [Y/N]: ")
         if input2 == "Y" or input2 == "y":
-            main(word_vectors)
+            main(word_vectors, data, usingNLP)
         return
     elif input1 == 2:
         print("\nGuess a word from the following list:")
@@ -320,17 +306,30 @@ def main(word_vectors):
         print("Number of Guesses:", time)
         input2 = input("\nPlay Again? [Y/N]: ")
         if input2 == "Y" or input2 == "y":
-            main(word_vectors)
+            main(word_vectors, data, usingNLP)
         return
     else:
         print("Please input 1 or 2...")
-        main(word_vectors)
+        main(word_vectors, data, usingNLP)
         return
     
 if __name__ == '__main__':
-    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+    usingNLP = False
+    word_vectors = None
+
+    # open and collect dict from json file
+    words_filename = 'pokemon.json'
+    print("Using", words_filename, "\n")
+
+    if words_filename == 'dictionary.json':
+        usingNLP = True
+        snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+        glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+        
+        snli_data = load_jsonl(snli_jsonl_path)
+        word_vectors = load_glove_vectors(glove_model_path)
+
+    with open(words_filename) as f:
+        data = json.load(f)
     
-    snli_data = load_jsonl(snli_jsonl_path)
-    word_vectors = load_glove_vectors(glove_model_path)
-    main(word_vectors)
+    main(word_vectors, data, usingNLP)
