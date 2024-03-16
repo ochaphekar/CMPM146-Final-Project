@@ -286,7 +286,12 @@ def main(word_vectors, data, usingNLP):
 
     # choose goal word by randomly selecting word/item from word bank
     goalword = random.choice(words)
-    input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
+    while True:
+        try:
+            input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
+            break
+        except:
+            print("Please input 1 or 2...")
     time = 0
     if input1 == 1:
         print("\nGoal is", goalword, "\n")
