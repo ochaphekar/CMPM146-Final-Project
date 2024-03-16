@@ -71,11 +71,11 @@ def intersection(list1, list2):
 
 def eliminate(words, attr, goal, guess, time):
     # if guess word is same as goal word, found it
+    time += 1
     print("Guessing", guess, "\n")
     if goal == guess:
         return guess, time
     # otherwise start eliminating
-    time += 1
     guess_attr = attr[words.index(guess)]
     goal_attr = attr[words.index(goal)]
     compared = []
