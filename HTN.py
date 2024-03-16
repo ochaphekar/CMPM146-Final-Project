@@ -216,7 +216,9 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
         for x in attr:
             index += 1
             for i in range(len(compared)):
-                if isinstance(compared[i], str):
+                if (x not in new_attr):
+                    break
+                elif isinstance(compared[i], str):
                     # if goal > guess, remove any words/items that are smaller or same
                     if compared[i] == ">":
                         if list(x.values())[i] <= list(guess_attr.values())[i]:
