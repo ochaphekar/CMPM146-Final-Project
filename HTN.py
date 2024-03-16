@@ -125,13 +125,19 @@ def eliminate(words, attr, goal, guess, time):
                         new_attr.remove(x)
                         break
             elif isinstance(compared[i], list):
+                check = False
                 for l in compared[i]:
                     if l not in list(x.values())[i]:
                         print(words[index], "eliminated")
                         new_words.remove(words[index])
                         new_attr.remove(x)
+                        check = True
                         break
+                if check == True:
+                    break
+
             # remove any words/items that dont have the same non-numbered attribute
+            
             else:
                 if compared[i] == True:
                     if list(x.values())[i] != list(guess_attr.values())[i]:
@@ -232,11 +238,15 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
                             new_attr.remove(x)
                             break
                 elif isinstance(compared[i], list):
+                    check = False
                     for l in compared[i]:
                         if l not in list(x.values())[i]:
                             new_words.remove(words[index])
                             new_attr.remove(x)
+                            check = True
                             break
+                    if check == True:
+                        break
                 # remove any words/items that dont have the same non-numbered attribute
                 else:
                     if compared[i] == True:
