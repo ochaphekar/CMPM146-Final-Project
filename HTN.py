@@ -107,7 +107,9 @@ def eliminate(words, attr, goal, guess, time):
     for x in attr:
         index += 1
         for i in range(len(compared) - 1):
-            if isinstance(compared[i], str):
+            if (x not in new_attr):
+                break
+            elif isinstance(compared[i], str):
                 # if goal > guess, remove any words/items that are smaller or same
                 if compared[i] == ">":
                     if list(x.values())[i] <= list(guess_attr.values())[i]:
@@ -324,7 +326,7 @@ if __name__ == '__main__':
     word_vectors = None
 
     # open and collect dict from json file
-    words_filename = 'pokemon.json'
+    words_filename = 'dictionary.json'
     print("Using", words_filename, "\n")
 
     if words_filename == 'dictionary.json':
