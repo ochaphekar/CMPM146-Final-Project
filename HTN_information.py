@@ -268,47 +268,54 @@ def main(word_vectors, data, usingNLP, goal_word):
     words, attr = create_dicts(data)
 
     # choose goal word by randomly selecting word/item from word bank
-    goalword = goal_word
-    while True:
-        try:
-            input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
-            break
-        except:
-            print("Please input 1 or 2...")
     time = 0
-    if input1 == 1:
-        print("\nGoal is", goalword, "\n")
-        # guess = half_eliminate(words, attr) [EXAMPLE]
-        guess = rng_guess(words)
-        final, time = eliminate(words, attr, goalword, guess, time)
-        print("Found Goal Word:", final)
-        print("Number of Guesses:", time)
-        input2 = input("\nPlay Again? [Y/N]: ")
-        if input2 == "Y" or input2 == "y":
-            main(word_vectors, data, usingNLP)
-        return
-    elif input1 == 2:
-        print("\nGuess a word from the following list:")
-        print(words)
-        final, time = human_evaluate(words, words, attr, attr, goalword, time, usingNLP, word_vectors)
-        print("Congrats, the goal word is:", final)
-        print("Number of Guesses:", time)
-        input2 = input("\nPlay Again? [Y/N]: ")
-        if input2 == "Y" or input2 == "y":
-            main(word_vectors, data, usingNLP)
-        return
-    else:
-        print("Please input 1 or 2...")
-        main(word_vectors, data, usingNLP)
-        return
+    goalword = goal_word
+    guess = rng_guess(words)
+    final, time = eliminate(words, attr, goalword, guess, time)
+    print("Found Goal Word:", final)
+    print("Number of Guesses:", time)
+
+    # while True:
+    #     try:
+    #         input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
+    #         break
+    #     except:
+    #         print("Please input 1 or 2...")
+    # time = 0
+    # if input1 == 1:
+    #     print("\nGoal is", goalword, "\n")
+    #     # guess = half_eliminate(words, attr) [EXAMPLE]
+    #     guess = rng_guess(words)
+    #     final, time = eliminate(words, attr, goalword, guess, time)
+    #     print("Found Goal Word:", final)
+    #     print("Number of Guesses:", time)
+    #     input2 = input("\nPlay Again? [Y/N]: ")
+    #     if input2 == "Y" or input2 == "y":
+    #         main(word_vectors, data, usingNLP)
+    #     return
+    # elif input1 == 2:
+    #     print("\nGuess a word from the following list:")
+    #     print(words)
+    #     final, time = human_evaluate(words, words, attr, attr, goalword, time, usingNLP, word_vectors)
+    #     print("Congrats, the goal word is:", final)
+    #     print("Number of Guesses:", time)
+    #     input2 = input("\nPlay Again? [Y/N]: ")
+    #     if input2 == "Y" or input2 == "y":
+    #         main(word_vectors, data, usingNLP)
+    #     return
+    # else:
+    #     print("Please input 1 or 2...")
+    #     main(word_vectors, data, usingNLP)
+    #     return
     
 def run(json, goal_word):
-    usingNLP = True
-    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+    usingNLP = False
+    word_vectors = None
+    # snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+    # glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
     
-    snli_data = load_jsonl(snli_jsonl_path)
-    word_vectors = load_glove_vectors(glove_model_path)
+    # snli_data = load_jsonl(snli_jsonl_path)
+    # word_vectors = load_glove_vectors(glove_model_path)
 
     
     main(word_vectors, json, usingNLP, goal_word)

@@ -6,3 +6,6 @@ Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Selector: High Level Ordering of Strategies
 DEBUG:root:Executing:Sequence: Numerical Strategy
 DEBUG:root:Executing:Action: htn_information
+DEBUG:root:Result: Action: htn_information -> Failure
+DEBUG:root:Result: Sequence: Numerical Strategy -> Failure
+DEBUG:root:Result: Selector: High Level Ordering of Strategies -> Failure
