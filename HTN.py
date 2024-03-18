@@ -265,34 +265,6 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time, usingNLP, word_vectors)
 
-# main function, read json file into list of words/items. Then plays the game
-def htn(json, word):
-    ## NLP usage
-    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
-    
-    snli_data = load_jsonl(snli_jsonl_path)
-    word_vectors = load_glove_vectors(glove_model_path)
-
-    # Example output
-    # output_similarity("dog", "cat", word_vectors)
-
-    # End of NLP usage
-    
-    # words is word bank in list form, attr is list of their respective attributes
-    # words and attr share the same index
-    words, attr = create_dicts(json)
-    # choose goal word by randomly selecting word/item from word bank
-    goalword = word
-    time = 1
-
-    # guess = half_eliminate(words, attr) [EXAMPLE]
-    guess = rng_guess(words)
-    final, time = eliminate(words, attr, goalword, guess, time)
-    print("Final Guess is:", final)
-    print("Number of Guesses:", time, "\n")
-
-
 def main(word_vectors, data, usingNLP):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
