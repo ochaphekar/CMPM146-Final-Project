@@ -9,24 +9,53 @@ actions, each function should only take the target word and json file.
 
 
 # conditional check 1
-# Check: Check the index of the guess and the actual word and rarrow down the list of potential guesses to a new list of words that only contains words of that given index. 
-
-def filter_words_by_num_attributes(words, guessed_attribute, attribute_type, guess_accuracy):
-    filtered_words = []
-    attributes = ["index", "contains_a", "contains_e", "contains_i", "contains_o", "contains_u", "length"] 
-    #attribute_type is 0-6   ^
-    #guess_accuracy is -1, 0, 1
+# Check: Check if word has at least 75% numerical attributes
+def check_numerical_attributes(json_obj, word):
+    if word not in json_obj:
+        return False
     
-    for word in words:
-        if guess_accuracy == -1 and word[attributes[attribute_type]] < guessed_attribute:
-            filtered_words.append(word)
-        elif guess_accuracy == 1 and word[attributes[attribute_type]] > guessed_attribute:
-            filtered_words.append(word)
-        elif guess_accuracy == 0 and word[attributes[attribute_type]] == guessed_attribute:
-            filtered_words.append(word)
+    attr_count = 0
+    total_attrs = len(json_obj[word])
     
-    return filtered_words
+    for attr in json_obj[word]:
+        if isinstance(attr, int) or isinstance(attr, float):
+            attr_count += 1
+    
+    return attr_count >= 0.75 * total_attrs
 
+
+# conditional check 2
+# Check: Check if word length is within average legnth of json words
+def check_word_length(json_obj, word):
+    if word not in json_obj:
+        return False
+
+    word_length = len(word)
+    word_lengths = [len(w) for w in json_obj.keys()]
+    
+    q1 = np.percentile(word_lengths, 25)
+    q3 = np.percentile(word_lengths, 75)
+    iqr = q3 - q1
+    lower_bound = q1 - 1.5 * iqr
+    upper_bound = q3 + 1.5 * iqr
+
+    return lower_bound <= word_length <= upper_bound
+
+
+# conditional check 3
+# Check: Check if word has at least 75% numerical attributes
+def check_other_attributes(json_obj, word):
+    if word not in json_obj:
+        return False
+    
+    attr_count = 0
+    total_attrs = len(json_obj[word])
+    
+    for attr in json_obj[word]:
+        if (not isinstance(attr, int)) and (not isinstance(attr, float)):
+            attr_count += 1
+    
+    return attr_count >= 0.60 * total_attrs
 
 # conditional check 2
 #Check: Check if both words are palindromes and create new list filtering out words that aren't palindromes

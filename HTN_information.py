@@ -1,6 +1,7 @@
 import json
 import random
 import numpy as np
+import random 
 
 ## NLP functions
 
@@ -69,13 +70,15 @@ def information_guess(words, goal, attr):
     guess = None
     best_weight = float('inf')  # Initialize to positive infinity for MSE
     for word in words:
-        word_attr = [value for key, value in attr[words.index(word)].items() if isinstance(value, int, float)]
-        goal_attr = [value for key, value in attr[words.index(goal)].items() if isinstance(value, int, float)]
+        word_attr = [value for key, value in attr[words.index(word)].items() if isinstance(value, (int, float))]
+        goal_attr = [value for key, value in attr[words.index(goal)].items() if isinstance(value, (int, float))]
 
         mse = calculate_mse(word_attr, goal_attr)  # Calculate Mean Squared Error
         if mse < best_weight:
             best_weight = mse
             guess = word
+            if random.random() < 0.80:
+                return guess
     return guess
 
 def calculate_mse(word_attr, goal_attr):
@@ -144,38 +147,11 @@ def eliminate(words, attr, goal, guess, time):
                         print(words[index], "eliminated")
                         new_words.remove(words[index])
                         new_attr.remove(x)
-                        break
-            elif isinstance(compared[i], list):
-                check = False
-                for l in compared[i]:
-                    if l not in list(x.values())[i]:
-                        print(words[index], "eliminated")
-                        new_words.remove(words[index])
-                        new_attr.remove(x)
-                        check = True
-                        break
-                if check == True:
-                    break
-
-            # remove any words/items that dont have the same non-numbered attribute
-            
-            else:
-                if compared[i] == True:
-                    if list(x.values())[i] != list(guess_attr.values())[i]:
-                        print(words[index], "eliminated")
-                        new_words.remove(words[index])
-                        new_attr.remove(x)
-                        break
-                else:
-                    if list(x.values())[i] == list(guess_attr.values())[i]:
-                        print(words[index], "eliminated")
-                        new_words.remove(words[index])
-                        new_attr.remove(x)
-                        break
+                        break      
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     if len(new_words) != len(words):
         print("\nWords Left:", new_words, "\n")
-    return eliminate(new_words, new_attr, goal, information_guess(new_words, goat, new_attr), time)
+    return eliminate(new_words, new_attr, goal, information_guess(new_words, goal, new_attr), time)
 
 def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False, word_vectors = None):
     # if guess word is same as goal word, found it
@@ -286,13 +262,13 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time, usingNLP, word_vectors)
 
-def main(word_vectors, data, usingNLP):
+def main(word_vectors, data, usingNLP, goal_word):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
     words, attr = create_dicts(data)
 
     # choose goal word by randomly selecting word/item from word bank
-    goalword = random.choice(words)
+    goalword = goal_word
     while True:
         try:
             input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
@@ -326,23 +302,13 @@ def main(word_vectors, data, usingNLP):
         main(word_vectors, data, usingNLP)
         return
     
-if __name__ == '__main__':
-    usingNLP = False
-    word_vectors = None
-
-    # open and collect dict from json file
-    words_filename = 'dictionary.json'
-    print("Using", words_filename, "\n")
-
-    if words_filename == 'dictionary.json':
-        usingNLP = True
-        snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-        glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
-        
-        snli_data = load_jsonl(snli_jsonl_path)
-        word_vectors = load_glove_vectors(glove_model_path)
-
-    with open(words_filename) as f:
-        data = json.load(f)
+def run(json, goal_word):
+    usingNLP = True
+    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
     
-    main(word_vectors, data, usingNLP)
+    snli_data = load_jsonl(snli_jsonl_path)
+    word_vectors = load_glove_vectors(glove_model_path)
+
+    
+    main(word_vectors, json, usingNLP, goal_word)

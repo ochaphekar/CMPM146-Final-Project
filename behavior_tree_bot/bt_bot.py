@@ -30,11 +30,12 @@ def setup_behavior_tree():
     # planets from its starting planet. The production bot's
     # strategy fits our needs for this. This will only run until a certain
     # number of planets have been taken over. 
-    starting_strategy = Sequence(name="Starting Strategy")
-    start_spread = Action(take_turn)
-    starting_strategy.child_nodes = [start_spread]
+    numerical_strategy = Sequence(name="Numerical Strategy")
+    # numerical_check = Check(check_numerical_attributes)
+    numerical_action = Action(htn_information)
+    numerical_strategy.child_nodes = [numerical_action]
 
-    root.child_nodes = [starting_strategy]
+    root.child_nodes = [numerical_strategy]
 
     logging.info('\n' + root.tree_to_string())
     return root
@@ -53,7 +54,7 @@ if __name__ == '__main__':
         data = json.load(f)
 
     # choose goal word by randomly selecting word/item from word bank
-    goalword = random.choice(data.keys())
+    goalword = random.choice(list(data.keys()))
     print("Goal is", goalword)
 
     behavior_tree = setup_behavior_tree()

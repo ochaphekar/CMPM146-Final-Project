@@ -1,6 +1,7 @@
 import sys
 import random
 sys.path.insert(0, '../')
+import HTN_information
 
 #dictionary behaviors
 
@@ -41,39 +42,8 @@ def greedy_behavior(words):
 
 
 #information behavior - looks more for parts of speech, vowel count, and length to cut search space consistently
-"""
-def information_behavior(words):
-    length.weight = x;
-    vowel.weight = y;
-    parts_of_speech.weight = z;
-    max_weighted_value = 0
-    best_word = None
-    For each word in words:
-        weighted_value = word.length*(length.weight) + word.vowel_count*(vowel.weight) + word.parts_of_speech*(parts_of_speech.weight)
-        If weighted_value > max_weighted_value:
-            max_weighted_value = weighted_value
-            best_word = word
-    
-    return best_word
-
-"""
+def htn_information(json, word):
+    HTN_information.run(json, word)
 
 #contexto behavior 
-"""
-assign a weight similar to greedy behavior for contexto
-for example: if word is ranked 20,000 in the list, it has a 0.01 weight
-if word is ranked 50 on thee list, it has a 10 weight
 
-use this to prioritize contexto once a good contexto word is found
-
-def calculate_weight(rank):
-    # Define the maximum rank and the corresponding weight
-    max_rank = 20000
-    max_weight = 0.01
-    
-    # Calculate the weight based on the rank
-    weight = max_weight * (max_rank / rank)
-    
-    return weight
-
-"""

@@ -1,0 +1,8 @@
+INFO:root:
+Selector: High Level Ordering of Strategies
+| Sequence: Numerical Strategy
+| | Action: htn_information
+
+DEBUG:root:Executing:Selector: High Level Ordering of Strategies
+DEBUG:root:Executing:Sequence: Numerical Strategy
+DEBUG:root:Executing:Action: htn_information
