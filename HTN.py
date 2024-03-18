@@ -39,7 +39,7 @@ def output_similarity(word1, word2, word_vectors):
 
         # Calculate cosine similarity between the two word vectors
         similarity_score = cosine_similarity(vector1, vector2)
-        print("Cosine Similarity Score between '{}' and '{}': {:.4f}".format(word1, word2, similarity_score))
+        print("Cosine Similarity Score: {:.4f}".format(similarity_score))
         return similarity_score
     else:
         print("One or both words not found in the GloVe vectors.")

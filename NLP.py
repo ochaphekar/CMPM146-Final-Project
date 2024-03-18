@@ -39,8 +39,7 @@ def output_similarity(word1, word2, word_vectors):
         print("Cosine Similarity Score between '{}' and '{}': {:.4f}".format(word1, word2, similarity_score))
         return similarity_score
     else:
-        print("One or both words not found in the GloVe vectors.")
-        return None
+        return -1
 
 # Example usage
 snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location

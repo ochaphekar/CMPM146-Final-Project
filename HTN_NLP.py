@@ -69,14 +69,7 @@ def intersection(list1, list2):
     list3 = [v for v in list1 if v in list2]
     return list3
 
-def NLP_eliminate(words, goal, guess, time, word_vectors):
-    # if guess word is same as goal word, found it
-    time += 1
-    print("Guessing", guess, "\n")
-    if goal == guess:
-        return guess, time
-    # otherwise start eliminating
-
+def cut_lower_NLP(words, goal, guess, word_vectors):
     # NLP score of the guess word
     guess_NLP = output_similarity(guess, goal, word_vectors)
 
@@ -86,14 +79,24 @@ def NLP_eliminate(words, goal, guess, time, word_vectors):
             print(word, "eliminated")
             words.remove(word)
 
-    new_words = words.copy()
+    return words
+
+def NLP_eliminate(words, goal, guess, time, word_vectors):
+    # if guess word is same as goal word, found it
+    time += 1
+    print("Guessing", guess, "\n")
+    if goal == guess:
+        return guess, time
+    # otherwise start eliminating
+
+    new_words = cut_lower_NLP(words, goal, guess, word_vectors)
     
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     if len(new_words) != len(words):
         print("\nWords Left:", new_words, "\n")
     return NLP_eliminate(new_words, goal, rng_guess(new_words), time, word_vectors)
 
-def main(word_vectors, data):
+def main(word_vectors, data, goal):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
     words = create_dicts(data)
@@ -102,38 +105,20 @@ def main(word_vectors, data):
     words.sort()
     print("Word Bank:", words, "\n")
 
-    # choose goal word by randomly selecting word/item from word bank
-    goalword = random.choice(words)
     time = 0
-    print("\nGoal is", goalword, "\n")
+    print("\nGoal is", goal, "\n")
     # guess = half_eliminate(words, attr) [EXAMPLE]
     guess = rng_guess(words)
-    final, time = NLP_eliminate(words, goalword, guess, time, word_vectors)
+    final, time = NLP_eliminate(words, goal, guess, time, word_vectors)
     print("Found Goal Word:", final)
     print("Number of Guesses:", time)
-    input2 = input("\nPlay Again? [Y/N]: ")
-    if input2 == "Y" or input2 == "y":
-        main(word_vectors, data, usingNLP)
     return
     
-if __name__ == '__main__':
-    word_vectors = None
+def run(json, word):
+    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+    
+    snli_data = load_jsonl(snli_jsonl_path)
+    word_vectors = load_glove_vectors(glove_model_path)
 
-    # open and collect dict from json file
-    words_filename = 'dictionary.json'
-    print("Using", words_filename, "\n")
-
-    if words_filename == 'dictionary.json':
-        usingNLP = True
-        snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-        glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
-        
-        snli_data = load_jsonl(snli_jsonl_path)
-        word_vectors = load_glove_vectors(glove_model_path)
-
-        with open(words_filename) as f:
-            data = json.load(f)
-
-        main(word_vectors, data)
-    else:
-        print("Choose a different dictionary file to use NLP")
+    main(word_vectors, json, word)

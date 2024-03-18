@@ -2,6 +2,7 @@ import sys
 import random
 sys.path.insert(0, '../')
 import HTN_information
+import HTN_NLP
 
 #dictionary behaviors
 
@@ -38,12 +39,12 @@ def greedy_behavior(words):
         return best_word
     return random.choice(words_to_guess_from)
 
-
-
-
 #information behavior - looks more for parts of speech, vowel count, and length to cut search space consistently
 def htn_information(json, word):
     HTN_information.run(json, word)
 
 #contexto behavior 
+    
+def htn_nlp(json, word):
+    HTN_NLP.run(json, word)
 

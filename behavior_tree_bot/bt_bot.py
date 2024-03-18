@@ -21,21 +21,26 @@ import random
 
 # You have to improve this tree or create an entire new one that is capable
 # of winning against all the 5 opponent bots
-def setup_behavior_tree():
+def setup_behavior_tree(usingNLP = False):
 
     # Top-down construction of behavior tree
     root = Selector(name='High Level Ordering of Strategies')
 
-    # The start sequence will run the production bot to take over the cloest
-    # planets from its starting planet. The production bot's
-    # strategy fits our needs for this. This will only run until a certain
-    # number of planets have been taken over. 
+    # if usingNLP, call cut_lower_NLP to eliminate words
+    #if usingNLP:
+    #    nlp_information = Sequence(name="NLP Information")
+    #    nlp_action = Action(htn_nlp)
+    #    nlp_information.child_nodes = [nlp_action]
+
     numerical_strategy = Sequence(name="Numerical Strategy")
-    # numerical_check = Check(check_numerical_attributes)
+    numerical_check = Check(check_numerical_attributes)
     numerical_action = Action(htn_information)
     numerical_strategy.child_nodes = [numerical_action]
 
-    root.child_nodes = [numerical_strategy]
+    if usingNLP:
+        root.child_nodes = [numerical_strategy]
+    else:
+        root.child_nodes = [numerical_strategy]
 
     logging.info('\n' + root.tree_to_string())
     return root
@@ -49,7 +54,13 @@ if __name__ == '__main__':
     logging.basicConfig(filename=__file__[:-3] + '.log', filemode='w', level=logging.DEBUG)
     
     # get json file
-    words_filename = 'pokemon.json'
+    words_filename = 'dictionary.json'
+
+    # if using NLP
+    usingNLP = False
+    if words_filename == 'dictionary.json':
+        usingNLP = True
+
     with open(words_filename) as f:
         data = json.load(f)
 
@@ -57,7 +68,7 @@ if __name__ == '__main__':
     goalword = random.choice(list(data.keys()))
     print("Goal is", goalword)
 
-    behavior_tree = setup_behavior_tree()
+    behavior_tree = setup_behavior_tree(usingNLP)
     do_turn(data, goalword)
 
 
