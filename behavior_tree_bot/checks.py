@@ -7,6 +7,7 @@ Here is where you will implement your functions for state-based conditional chec
 actions, each function should only take the target word and json file. 
 """
 
+
 # conditional check 1
 # Check: Check the index of the guess and the actual word and rarrow down the list of potential guesses to a new list of words that only contains words of that given index. 
 
