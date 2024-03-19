@@ -304,55 +304,54 @@ def human_evaluate(og_words, words, og_attr, attr, goal, time, usingNLP = False,
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     return human_evaluate(og_words, new_words, og_attr, new_attr, goal, time, usingNLP, word_vectors)
 
-def main(word_vectors, data, usingNLP):
+def main(word_vectors, data, usingNLP, goal_word):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
     words, attr = create_dicts(data)
 
     # choose goal word by randomly selecting word/item from word bank
-    goalword = random.choice(words)
-    while True:
-        try:
-            input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
-            break
-        except:
-            print("Please input 1 or 2...")
     time = 0
-    if input1 == 1:
-        print("\nGoal is", goalword, "\n")
-        # guess = half_eliminate(words, attr) [EXAMPLE]
-        guess = rng_guess(words)
-        final, time = eliminate(words, attr, goalword, guess, time)
-        print("Found Goal Word:", final)
-        print("Number of Guesses:", time)
-        input2 = input("\nPlay Again? [Y/N]: ")
-        if input2 == "Y" or input2 == "y":
-            main(word_vectors, data, usingNLP)
-        return
-    elif input1 == 2:
-        print("\nGuess a word from the following list:")
-        print(words)
-        final, time = human_evaluate(words, words, attr, attr, goalword, time, usingNLP, word_vectors)
-        print("Congrats, the goal word is:", final)
-        print("Number of Guesses:", time)
-        input2 = input("\nPlay Again? [Y/N]: ")
-        if input2 == "Y" or input2 == "y":
-            main(word_vectors, data, usingNLP)
-        return
-    else:
-        print("Please input 1 or 2...")
-        main(word_vectors, data, usingNLP)
-        return
+    goalword = goal_word
+    guess = rng_guess(words)
+    final, time = eliminate(words, attr, goalword, guess, time)
+    print("Found Goal Word:", final)
+    print("Number of Guesses:", time)
     
-if __name__ == '__main__':
+    # while True:
+    #     try:
+    #         input1 = int(input("Enter 1 for bot\nEnter 2 for human: "))
+    #         break
+    #     except:
+    #         print("Please input 1 or 2...")
+    # time = 0
+    # if input1 == 1:
+    #     print("\nGoal is", goalword, "\n")
+    #     # guess = half_eliminate(words, attr) [EXAMPLE]
+    #     guess = rng_guess(words)
+    #     final, time = eliminate(words, attr, goalword, guess, time)
+    #     print("Found Goal Word:", final)
+    #     print("Number of Guesses:", time)
+    #     input2 = input("\nPlay Again? [Y/N]: ")
+    #     if input2 == "Y" or input2 == "y":
+    #         main(word_vectors, data, usingNLP)
+    #     return
+    # elif input1 == 2:
+    #     print("\nGuess a word from the following list:")
+    #     print(words)
+    #     final, time = human_evaluate(words, words, attr, attr, goalword, time, usingNLP, word_vectors)
+    #     print("Congrats, the goal word is:", final)
+    #     print("Number of Guesses:", time)
+    #     input2 = input("\nPlay Again? [Y/N]: ")
+    #     if input2 == "Y" or input2 == "y":
+    #         main(word_vectors, data, usingNLP)
+    #     return
+    # else:
+    #     print("Please input 1 or 2...")
+    #     main(word_vectors, data, usingNLP)
+    #     return
+    
+def run(json, goal_word):
     usingNLP = False
     word_vectors = None
-
-    # open and collect dict from json file
-    words_filename = 'dictionary.json'
-    print("Using", words_filename, "\n")
-
-    with open(words_filename) as f:
-        data = json.load(f)
     
-    main(word_vectors, data, usingNLP)
+    main(word_vectors, json, usingNLP, goal_word)

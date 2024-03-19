@@ -42,7 +42,7 @@ def output_similarity(word1, word2, word_vectors):
         # print("Cosine Similarity Score': {:.4f}".format(similarity_score))
         return similarity_score
     else:
-        print("One or both words not found in the GloVe vectors.")
+        return 0.0001
         return None
 
 ## End of NLP functions
@@ -93,7 +93,7 @@ def NLP_eliminate(words, goal, guess, time, word_vectors):
         print("\nWords Left:", new_words, "\n")
     return NLP_eliminate(new_words, goal, rng_guess(new_words), time, word_vectors)
 
-def main(word_vectors, data):
+def main(word_vectors, data, goal_word):
     # words is word bank in list form, attr is list of their respective attributes
     # words and attr share the same index
     words = create_dicts(data)
@@ -111,29 +111,14 @@ def main(word_vectors, data):
     final, time = NLP_eliminate(words, goalword, guess, time, word_vectors)
     print("Found Goal Word:", final)
     print("Number of Guesses:", time)
-    input2 = input("\nPlay Again? [Y/N]: ")
-    if input2 == "Y" or input2 == "y":
-        main(word_vectors, data, usingNLP)
-    return
     
-if __name__ == '__main__':
-    word_vectors = None
+def run(json, goal_word):
 
-    # open and collect dict from json file
-    words_filename = 'dictionary.json'
-    print("Using", words_filename, "\n")
+    usingNLP = True
+    snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
+    glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
+    
+    snli_data = load_jsonl(snli_jsonl_path)
+    word_vectors = load_glove_vectors(glove_model_path)
 
-    if words_filename == 'dictionary.json':
-        usingNLP = True
-        snli_jsonl_path = "./snli_1.0/snli_1.0_train.jsonl"  # Adjust this path to your SNLI JSONL file location
-        glove_model_path = "./glove.6B/glove.6B.300d.txt"  # Adjust this path to your GloVe file location
-        
-        snli_data = load_jsonl(snli_jsonl_path)
-        word_vectors = load_glove_vectors(glove_model_path)
-
-        with open(words_filename) as f:
-            data = json.load(f)
-
-        main(word_vectors, data)
-    else:
-        print("Choose a different dictionary file to use NLP")
+    main(word_vectors, json, goal_word)

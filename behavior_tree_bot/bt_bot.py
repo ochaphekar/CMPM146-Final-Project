@@ -31,11 +31,21 @@ def setup_behavior_tree():
     # strategy fits our needs for this. This will only run until a certain
     # number of planets have been taken over. 
     numerical_strategy = Sequence(name="Numerical Strategy")
-    # numerical_check = Check(check_numerical_attributes)
+    numerical_check = Check(check_numerical_attributes)
     numerical_action = Action(htn_information)
-    numerical_strategy.child_nodes = [numerical_action]
+    numerical_strategy.child_nodes = [numerical_check, numerical_action]
 
-    root.child_nodes = [numerical_strategy]
+    greedy_strategy = Sequence(name="Greedy Strategy")
+    greedy_check = Check(check_greedy_attributes)
+    greedy_action = Action(greedy_information)
+    greedy_strategy.child_nodes = [greedy_check, greedy_action]
+
+    nlp_strategy = Sequence(name="Nlp Strategy")
+    nlp_check = Check(check_nlp_attributes)
+    nlp_action = Action(nlp_information)
+    nlp_strategy.child_nodes = [nlp_check, nlp_action]
+
+    root.child_nodes = [numerical_strategy, greedy_strategy, nlp_strategy]
 
     logging.info('\n' + root.tree_to_string())
     return root
