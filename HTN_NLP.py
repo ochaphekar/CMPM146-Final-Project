@@ -69,14 +69,7 @@ def intersection(list1, list2):
     list3 = [v for v in list1 if v in list2]
     return list3
 
-def NLP_eliminate(words, goal, guess, time, word_vectors):
-    # if guess word is same as goal word, found it
-    time += 1
-    print("Guessing", guess, "\n")
-    if goal == guess:
-        return guess, time
-    # otherwise start eliminating
-
+def cut_lower_NLP(words, goal, guess, word_vectors):
     # NLP score of the guess word
     guess_NLP = output_similarity(guess, goal, word_vectors)
 
@@ -86,7 +79,17 @@ def NLP_eliminate(words, goal, guess, time, word_vectors):
             print(word, "eliminated")
             words.remove(word)
 
-    new_words = words.copy()
+    return words
+
+def NLP_eliminate(words, goal, guess, time, word_vectors):
+    # if guess word is same as goal word, found it
+    time += 1
+    print("Guessing", guess, "\n")
+    if goal == guess:
+        return guess, time
+    # otherwise start eliminating
+
+    new_words = cut_lower_NLP(words, goal, guess, word_vectors)
     
     # repeat process again until found last one [Be sure to swap out what goes into the "guess" slot]
     if len(new_words) != len(words):
@@ -102,13 +105,11 @@ def main(word_vectors, data, goal_word):
     words.sort()
     print("Word Bank:", words, "\n")
 
-    # choose goal word by randomly selecting word/item from word bank
-    goalword = random.choice(words)
     time = 0
-    print("\nGoal is", goalword, "\n")
+    print("\nGoal is", goal, "\n")
     # guess = half_eliminate(words, attr) [EXAMPLE]
     guess = rng_guess(words)
-    final, time = NLP_eliminate(words, goalword, guess, time, word_vectors)
+    final, time = NLP_eliminate(words, goal, guess, time, word_vectors)
     print("Found Goal Word:", final)
     print("Number of Guesses:", time)
     
